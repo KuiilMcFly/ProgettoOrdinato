@@ -9,7 +9,7 @@ function Bluetooth(props) {
     <View style={BluetoothCSS.container}>
       <View style={BluetoothCSS.bluetoothSchermo}>
         <View style={BluetoothCSS.header}>
-          <Header />
+          <Header title={'BLUETOOTH'} />
         </View>
         <View style={BluetoothCSS.btn}>
           <View style={BluetoothCSS.btnAttivaRow}>

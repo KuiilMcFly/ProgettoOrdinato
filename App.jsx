@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import {HomeFooterStyles} from './Styles/HomeCSS/HomeFooterStyles';
 import {HomeStyles} from './Styles/HomeCSS/HomeStyle';
 import {Header} from './Components/Header';
 import {Footer} from './Components/Footer';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 function Home(props) {
   return (
@@ -18,4 +19,16 @@ function Home(props) {
   );
 }
 
-export default Home;
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;

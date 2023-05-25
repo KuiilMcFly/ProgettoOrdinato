@@ -8,13 +8,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Bluetooth from './Screens/Bluetooth';
 import Wifi from './Screens/Wifi';
 import {enableScreens} from 'react-native-screens';
+import Setting from './Screens/Setting';
 enableScreens();
 
 const Home = ({navigation, ...props}) => {
   return (
     <View style={HomeStyles.container}>
       <View style={HomeStyles.header}>
-        <Header title={'HOME'} />
+        <Header navigation={navigation} title={'HOME'} />
       </View>
       <View style={HomeStyles.footer}>
         <Footer navigation={navigation} />
@@ -32,6 +33,7 @@ const App = ({navigation}) => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Bluetooth" component={Bluetooth} />
         <Stack.Screen name="Wifi" component={Wifi} />
+        <Stack.Screen name="Setting" component={Setting} />
       </Stack.Navigator>
     </NavigationContainer>
   );

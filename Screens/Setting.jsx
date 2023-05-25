@@ -3,12 +3,13 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
+import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 
-function Setting(props) {
+function Setting({navigation, ...props}) {
   return (
     <View style={SettingCSS.container}>
       <View style={BluetoothCSS.header}>
-        <Header />
+        <Header navigation={navigation} />
       </View>
       <View style={SettingCSS.textBtn}>
         <Text style={SettingCSS.lingua}>Lingua :</Text>
@@ -36,7 +37,6 @@ function Setting(props) {
             <Text style={SettingCSS.deutsch}>Deutsch</Text>
           </TouchableOpacity>
         </View>
-        
       </View>
       <View style={BluetoothCSS.footer}>
         <Footer />

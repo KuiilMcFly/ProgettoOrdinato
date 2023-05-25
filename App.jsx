@@ -6,6 +6,7 @@ import {Footer} from './Components/Footer';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Bluetooth from './Screens/Bluetooth';
+import Wifi from './Screens/Wifi';
 import {enableScreens} from 'react-native-screens';
 enableScreens();
 
@@ -30,6 +31,7 @@ const App = ({navigation}) => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Bluetooth" component={Bluetooth} />
+        <Stack.Screen name="Wifi" component={Wifi} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,79 +1,35 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
-import {Header} from 'react-native/Libraries/NewAppScreen';
-import MaterialButtonViolet2 from './components/MaterialButtonViolet2';
-import MaterialIconButtonsFooter2 from './components/MaterialIconButtonsFooter2';
+import {Header} from '../Components/Header';
+import {Footer} from '../Components/Footer';
+import {WifiScanStyle} from '../Styles/WifiCSS/WifiScanCSS';
 
-function Index(props) {
+function Wifi(props) {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <View style={WifiStyles.container}>
+      <View style={WifiStyles.header}>
         <Header />
       </View>
-      <View style={styles.btn}>
-        <MaterialButtonViolet2 style={styles.btnScan}></MaterialButtonViolet2>
+      <View style={WifiStyles.btn}>
+        <View style={WifiStyles.btnScan}>
+          <TouchableOpacity style={[WifiScanStyle.container, props.style]}>
+            <Text style={WifiScanStyle.scan}>SCAN</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.scrollView}>
-        <View style={styles.scrollArea}>
+      <View style={WifiStyles.scrollView}>
+        <View style={WifiStyles.scrollArea}>
           <ScrollView
             contentContainerStyle={
-              styles.scrollArea_contentContainerStyle
+              WifiStyles.scrollArea_contentContainerStyle
             }></ScrollView>
         </View>
       </View>
-      <View style={styles.footer}>
-        <MaterialIconButtonsFooter2
-          style={styles.footerWifi}></MaterialIconButtonsFooter2>
+      <View style={WifiStyles.footer}>
+        <Footer />
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: 360,
-    height: 737,
-  },
-  header: {
-    width: 360,
-    height: 56,
-  },
-  headerWifi: {
-    height: 56,
-    width: 360,
-  },
-  btn: {
-    width: 113,
-    height: 57,
-  },
-  btnScan: {
-    height: 57,
-    width: 113,
-    borderRadius: 15,
-  },
-  scrollView: {
-    width: 274,
-    height: 443,
-  },
-  scrollArea: {
-    width: 274,
-    height: 443,
-    backgroundColor: 'rgba(230, 230, 230,1)',
-  },
-  scrollArea_contentContainerStyle: {
-    height: 443,
-    width: 274,
-  },
-  footer: {
-    width: 360,
-    height: 56,
-  },
-  footerWifi: {
-    height: 56,
-    width: 360,
-  },
-});
-
-export default Index;
+export default Wifi;

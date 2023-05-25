@@ -4,7 +4,7 @@ import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
 import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 
-function Bluetooth(props) {
+function Bluetooth({navigation, ...props}) {
   return (
     <View style={BluetoothCSS.container}>
       <View style={BluetoothCSS.bluetoothSchermo}>
@@ -47,7 +47,7 @@ function Bluetooth(props) {
           </View>
         </View>
         <View style={BluetoothCSS.footer}>
-          <Footer />
+          <Footer navigation={navigation} />
         </View>
       </View>
     </View>

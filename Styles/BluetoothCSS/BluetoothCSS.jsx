@@ -5,14 +5,13 @@ export const BluetoothCSS = StyleSheet.create({
     flex: 1,
   },
   bluetoothSchermo: {
-    width: 361,
-    height: 736,
+    width: '100%',
+    height: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 24,
   },
   header: {
-    width: 360,
+    width: '100%',
     height: 56,
   },
   headerBluetooth: {
@@ -38,6 +37,11 @@ export const BluetoothCSS = StyleSheet.create({
     height: 55,
     flexDirection: 'row',
   },
+  btnAttiva1: {
+    height: 55,
+    width: 121,
+    borderRadius: 15
+  },
   btnDisattiva: {
     height: 55,
     width: 121,
@@ -55,20 +59,22 @@ export const BluetoothCSS = StyleSheet.create({
     marginTop: 26,
   },
   scrollView: {
-    width: 291,
-    height: 390,
+    width: '100%',
+    height: '60%',
   },
   scrollArea: {
-    width: 291,
-    height: 390,
+    width: '90%',
+    height: '100%',
+    justifyContent: 'center',
+    alignSelf: 'center',
     backgroundColor: 'rgba(230, 230, 230,1)',
   },
   scrollArea_contentContainerStyle: {
     height: 390,
-    width: 291,
+    width: '100%',
   },
   footer: {
-    width: 361,
+    width: '100%',
     height: 56,
   },
   footerBluetooth: {
@@ -76,11 +82,12 @@ export const BluetoothCSS = StyleSheet.create({
     width: 361,
   },
   container1: {
+    height: '100%',
     backgroundColor: '#3F51B5',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -97,13 +104,19 @@ export const BluetoothCSS = StyleSheet.create({
     color: '#fff',
     fontSize: 14,
   },
+  stopScan1: {
+    height: 55,
+    width: 121,
+    borderRadius: 15,
+    marginLeft: 49
+  },
   container2: {
     height: '100%',
     backgroundColor: '#3F51B5',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -127,11 +140,12 @@ export const BluetoothCSS = StyleSheet.create({
     marginLeft: 49,
   },
   container3: {
+    height: '100%',
     backgroundColor: '#2196F3',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -148,12 +162,18 @@ export const BluetoothCSS = StyleSheet.create({
     color: '#fff',
     fontSize: 14,
   },
+  btnDisattiva1: {
+    height: 55,
+    width: 121,
+    borderRadius: 15
+  },
   container4: {
+    height: '100%',
     backgroundColor: '#F44336',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

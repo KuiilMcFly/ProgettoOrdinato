@@ -4,11 +4,11 @@ export const WifiStyles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 360,
-    height: 737,
+    width: '100%',
+    height: '100%',
   },
   header: {
-    width: 360,
+    width: '100%',
     height: 56,
   },
   headerWifi: {
@@ -25,12 +25,13 @@ export const WifiStyles = StyleSheet.create({
     borderRadius: 15,
   },
   scrollView: {
-    width: 274,
-    height: 443,
+    width: '100%',
+    height: '60%',
   },
   scrollArea: {
-    width: 274,
-    height: 443,
+    width: '90%',
+    alignSelf: 'center',
+    height: '100%',
     backgroundColor: 'rgba(230, 230, 230,1)',
   },
   scrollArea_contentContainerStyle: {
@@ -38,7 +39,7 @@ export const WifiStyles = StyleSheet.create({
     width: 274,
   },
   footer: {
-    width: 360,
+    width: '100%',
     height: 56,
   },
   footerWifi: {

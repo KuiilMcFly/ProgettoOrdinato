@@ -14,7 +14,7 @@ const Home = ({navigation, ...props}) => {
   return (
     <View style={HomeStyles.container}>
       <View style={HomeStyles.header}>
-        <Header />
+        <Header title={'HOME'} />
       </View>
       <View style={HomeStyles.footer}>
         <Footer navigation={navigation} />

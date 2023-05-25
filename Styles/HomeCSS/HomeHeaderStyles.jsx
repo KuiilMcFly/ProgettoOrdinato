@@ -27,7 +27,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     fontFamily: 'roboto-700',
     color: 'rgba(255,255,255,1)',
     height: 16,
-    width: '100%',
+    width: '90%',
   },
   image: {
     width: 27,

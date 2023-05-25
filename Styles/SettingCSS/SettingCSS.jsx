@@ -4,11 +4,11 @@ export const SettingCSS = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 360,
-    height: 735,
+    width: '100%',
+    height: '100%',
   },
   header: {
-    width: 360,
+    width: '100%',
     height: 56,
   },
   headerSetting: {
@@ -53,7 +53,7 @@ export const SettingCSS = StyleSheet.create({
     marginLeft: 3,
   },
   footer: {
-    width: 360,
+    width: '100%',
     height: 56,
   },
   footerSetting: {
@@ -61,11 +61,12 @@ export const SettingCSS = StyleSheet.create({
     width: 360,
   },
   container1: {
+    height: '100%',
     backgroundColor: "#3F51B5",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -83,11 +84,12 @@ export const SettingCSS = StyleSheet.create({
     fontSize: 14
   },
   container2: {
+    height: '100%',
     backgroundColor: "#3F51B5",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -105,11 +107,12 @@ export const SettingCSS = StyleSheet.create({
     fontSize: 14
   },
   container3: {
+    height: '100%',
     backgroundColor: '#3F51B5',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -127,11 +130,12 @@ export const SettingCSS = StyleSheet.create({
     fontSize: 14,
   },
   container4: {
+    height: '100%',
     backgroundColor: '#3F51B5',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

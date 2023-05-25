@@ -39,7 +39,7 @@ function Setting({navigation, ...props}) {
         </View>
       </View>
       <View style={BluetoothCSS.footer}>
-        <Footer />
+        <Footer navigation={navigation} />
       </View>
     </View>
   );

@@ -1,12 +1,13 @@
-import {StyleSheet} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import {StyleSheet} from 'react-native';
 
 export const WifiScanStyle = StyleSheet.create({
   container: {
     backgroundColor: '#3F51B5',
     justifyContent: 'center',
     alignItems: 'center',
+    height: '100%',
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

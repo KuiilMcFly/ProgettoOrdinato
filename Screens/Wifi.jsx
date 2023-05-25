@@ -1,18 +1,25 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
 import {WifiScanStyle} from '../Styles/WifiCSS/WifiScanCSS';
+import {WifiStyles} from '../Styles/WifiCSS/WifiStyles';
 
-function Wifi(props) {
+function Wifi({navigation, props}) {
   return (
     <View style={WifiStyles.container}>
       <View style={WifiStyles.header}>
-        <Header />
+        <Header title={'WI-FI'} navigation={navigation} />
       </View>
       <View style={WifiStyles.btn}>
         <View style={WifiStyles.btnScan}>
-          <TouchableOpacity style={[WifiScanStyle.container, props.style]}>
+          <TouchableOpacity style={[WifiScanStyle.container]}>
             <Text style={WifiScanStyle.scan}>SCAN</Text>
           </TouchableOpacity>
         </View>
@@ -26,7 +33,7 @@ function Wifi(props) {
         </View>
       </View>
       <View style={WifiStyles.footer}>
-        <Footer />
+        <Footer navigation={navigation} />
       </View>
     </View>
   );

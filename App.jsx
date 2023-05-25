@@ -13,7 +13,7 @@ function Home(props) {
       <View style={HomeHeaderStyles.group}>
         <Text style={HomeHeaderStyles.home}>HOME</Text>
         <Image
-          source={require("../ProgettoSistemato/assets/HomeImg/settings.png")}
+          source={require("../ProgettoOrdinato/assets/HomeImg/settings.png")}
           resizeMode="contain"
           style={HomeHeaderStyles.image}
         ></Image>
@@ -25,17 +25,17 @@ function Home(props) {
       <View style={[HomeFooterStyles, props.style]}>
       <View style={HomeFooterStyles.group}>
         <Image
-          source={require("../ProgettoSistemato/assets/HomeImg/bluetooth.png")}
+          source={require("../ProgettoOrdinato/assets/HomeImg/bluetooth.png")}
           resizeMode="contain"
           style={HomeFooterStyles.image}
         ></Image>
         <Image
-          source={require("../ProgettoSistemato/assets/HomeImg/home.png")}
+          source={require("../ProgettoOrdinato/assets/HomeImg/home.png")}
           resizeMode="contain"
           style={HomeFooterStyles.image2}
         ></Image>
         <Image
-          source={require("../ProgettoSistemato/assets/HomeImg/wifi.png")}
+          source={require("../ProgettoOrdinato/assets/HomeImg/wifi.png")}
           resizeMode="contain"
           style={HomeFooterStyles.image3}
         ></Image>

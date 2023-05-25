@@ -5,30 +5,34 @@ import {Header} from './Components/Header';
 import {Footer} from './Components/Footer';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Bluetooth from './Screens/Bluetooth';
+import {enableScreens} from 'react-native-screens';
+enableScreens();
 
-function Home(props) {
+const Home = ({navigation, ...props}) => {
   return (
     <View style={HomeStyles.container}>
       <View style={HomeStyles.header}>
         <Header />
       </View>
       <View style={HomeStyles.footer}>
-        <Footer />
+        <Footer navigation={navigation} />
       </View>
     </View>
   );
-}
+};
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+const App = ({navigation}) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Bluetooth" component={Bluetooth} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default App;

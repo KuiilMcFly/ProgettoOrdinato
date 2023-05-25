@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { View, ScrollView} from 'react-native';
-import MaterialHeader1 from '../components/MaterialHeader1';
-import MaterialIconButtonsFooter from '../components/MaterialIconButtonsFooter';
+import { View, ScrollView, TouchableOpacity, Text} from 'react-native';
+import { Header } from '../Components/Header';
+import { Footer } from '../Components/Footer';
 import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 
 function Bluetooth(props) {
@@ -9,20 +9,22 @@ function Bluetooth(props) {
     <View style={BluetoothCSS.container}>
       <View style={BluetoothCSS.bluetoothSchermo}>
         <View style={BluetoothCSS.header}>
-          <MaterialHeader1
-            style={BluetoothCSS.headerBluetooth}></MaterialHeader1>
+          <Header/>
         </View>
         <View style={BluetoothCSS.btn}>
           <View style={BluetoothCSS.btnAttivaRow}>
-
             <TouchableOpacity style={[BluetoothCSS.container4, props.style]}>
               <Text style={BluetoothCSS.attiva}>ATTIVA</Text>
             </TouchableOpacity>
 
+            <View style={BluetoothCSS.scan1}>
             <TouchableOpacity style={[BluetoothCSS.container2, props.style]}>
               <Text style={BluetoothCSS.scan}>SCAN</Text>
             </TouchableOpacity>
+
+            </View>
           </View>
+
           <View style={BluetoothCSS.btnDisattivaRow}>
             <TouchableOpacity style={[BluetoothCSS.container3, props.style]}>
               <Text style={BluetoothCSS.disattiva}>DISATTIVA</Text>
@@ -43,8 +45,7 @@ function Bluetooth(props) {
           </View>
         </View>
         <View style={BluetoothCSS.footer}>
-          <MaterialIconButtonsFooter
-            style={BluetoothCSS.footerBluetooth}></MaterialIconButtonsFooter>
+          <Footer/>
         </View>
       </View>
     </View>

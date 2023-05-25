@@ -1,14 +1,17 @@
 import {HomeFooterStyles} from '../Styles/HomeCSS/HomeFooterStyles';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 
-export const Footer = props => {
+export const Footer = ({navigation, ...props}) => {
   return (
     <View style={[HomeFooterStyles, props.style]}>
       <View style={HomeFooterStyles.group}>
-        <Image
-          source={require('../assets/HomeImg/bluetooth.png')}
-          resizeMode="contain"
-          style={HomeFooterStyles.image}></Image>
+        <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
+          <Image
+            source={require('../assets/HomeImg/bluetooth.png')}
+            resizeMode="contain"
+            style={HomeFooterStyles.image}></Image>
+        </TouchableOpacity>
+
         <Image
           source={require('../assets/HomeImg/home.png')}
           resizeMode="contain"

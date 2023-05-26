@@ -16,6 +16,8 @@ import {WifiStyles} from '../Styles/WifiCSS/WifiStyles';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import WifiManager from 'react-native-wifi-reborn';
 import {useNavigation} from '@react-navigation/native';
+import { FlatList } from 'react-native';
+import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
 
 function Wifi(props) {
   const [passwordWifi, setPasswordWifi] = useState('');
@@ -99,7 +101,7 @@ function Wifi(props) {
 
   function connect(SSID) {
     WifiManager.connectToProtectedSSID(SSID, passwordWifi, false).then(x => {
-      console.log('connessione riuscita');
+      Alert.alert("Connessione riuscita!")
     });
   }
   function stopConnection() {
@@ -113,6 +115,14 @@ function Wifi(props) {
     );
   }
 
+  const renderItem = ({ item }) => (
+    <Button
+      key={item.SSID}
+      title={`${item.SSID}`}
+      onPress={() =>selectWifi(item)}
+    />
+  );
+
   return (
     <View style={WifiStyles.container}>
       <View style={WifiStyles.header}>
@@ -120,19 +130,47 @@ function Wifi(props) {
       </View>
       <View style={WifiStyles.btn}>
         <View style={WifiStyles.btnScan}>
-          <TouchableOpacity style={[WifiScanStyle.container]}>
+          <TouchableOpacity onPress={deviceScan} style={[WifiScanStyle.container]}>
             <Text style={WifiScanStyle.scan}>SCAN</Text>
           </TouchableOpacity>
         </View>
       </View>
       <View style={WifiStyles.scrollView}>
         <View style={WifiStyles.scrollArea}>
-          <ScrollView
-            contentContainerStyle={
-              WifiStyles.scrollArea_contentContainerStyle
-            }></ScrollView>
+        <FlatList
+           contentContainerStyle={
+            WifiStyles.scrollArea_contentContainerStyle
+          }
+            data={scannedWifi}
+            renderItem={renderItem}
+            keyExtractor={item => item.SSID}
+          />
+
         </View>
       </View>
+      <Modal visible={!!connectedDevice} animationType="slide">
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 10,
+          }}>
+          <Text style={ModalStyles.deviceData}>{connectedDevice?.SSID || ''}</Text>
+          <TextInput
+            placeholder="password"
+            style={ModalStyles.deviceData}
+            onChangeText={text => setPasswordWifi(text)}
+          />
+          <Button
+            title="Connetti"
+            onPress={() => {
+              connect(connectedDevice.SSID);
+            }}
+          />
+          <Button title="Close" onPress={() => stopConnection()} />
+        </View>
+      </Modal>
       <View style={WifiStyles.footer}>
         <Footer navigation={navigation} />
       </View>

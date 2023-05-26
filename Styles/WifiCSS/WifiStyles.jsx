@@ -35,7 +35,6 @@ export const WifiStyles = StyleSheet.create({
     backgroundColor: 'rgba(230, 230, 230,1)',
   },
   scrollArea_contentContainerStyle: {
-    height: '100%',
     width: '100%',
     padding: 10,
     gap: 10,

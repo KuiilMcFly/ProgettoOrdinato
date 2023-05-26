@@ -6,6 +6,7 @@ import {
   Text,
   Button,
   Modal,
+  Alert,
 } from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';

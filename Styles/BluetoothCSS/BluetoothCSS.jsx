@@ -40,7 +40,7 @@ export const BluetoothCSS = StyleSheet.create({
   btnAttiva1: {
     height: 55,
     width: 121,
-    borderRadius: 15
+    borderRadius: 15,
   },
   btnDisattiva: {
     height: 55,
@@ -70,8 +70,9 @@ export const BluetoothCSS = StyleSheet.create({
     backgroundColor: 'rgba(230, 230, 230,1)',
   },
   scrollArea_contentContainerStyle: {
-    height: 390,
     width: '100%',
+    padding: 10,
+    gap: 10,
   },
   footer: {
     width: '100%',
@@ -108,7 +109,7 @@ export const BluetoothCSS = StyleSheet.create({
     height: 55,
     width: 121,
     borderRadius: 15,
-    marginLeft: 49
+    marginLeft: 49,
   },
   container2: {
     height: '100%',
@@ -165,7 +166,7 @@ export const BluetoothCSS = StyleSheet.create({
   btnDisattiva1: {
     height: 55,
     width: 121,
-    borderRadius: 15
+    borderRadius: 15,
   },
   container4: {
     height: '100%',

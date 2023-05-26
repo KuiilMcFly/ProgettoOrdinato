@@ -16,6 +16,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import {BleManager} from 'react-native-ble-plx';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import Base64 from '../Base64';
+import CustomConnectBt from '../Components/CustomConnectBt';
 
 function Bluetooth({navigation, ...props}) {
   const [spinner, setSpinner] = useState(false);
@@ -291,9 +292,9 @@ function Bluetooth({navigation, ...props}) {
                 BluetoothCSS.scrollArea_contentContainerStyle
               }>
               {scannedDevices.map(device => (
-                <Button
+                <CustomConnectBt
                   key={device.id}
-                  title={`${device.name}`}
+                  label={`${device.name}`}
                   onPress={() => connect(device)}
                 />
               ))}

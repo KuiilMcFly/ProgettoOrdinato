@@ -16,8 +16,9 @@ import {WifiStyles} from '../Styles/WifiCSS/WifiStyles';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import WifiManager from 'react-native-wifi-reborn';
 import {useNavigation} from '@react-navigation/native';
-import { FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
+import CustomConnectBt from '../Components/CustomConnectBt';
 
 function Wifi(props) {
   const [passwordWifi, setPasswordWifi] = useState('');
@@ -101,7 +102,7 @@ function Wifi(props) {
 
   function connect(SSID) {
     WifiManager.connectToProtectedSSID(SSID, passwordWifi, false).then(x => {
-      Alert.alert("Connessione riuscita!")
+      Alert.alert('Connessione riuscita!');
     });
   }
   function stopConnection() {
@@ -115,11 +116,11 @@ function Wifi(props) {
     );
   }
 
-  const renderItem = ({ item }) => (
-    <Button
+  const renderItem = ({item}) => (
+    <CustomConnectBt
       key={item.SSID}
-      title={`${item.SSID}`}
-      onPress={() =>selectWifi(item)}
+      label={`${item.SSID}`}
+      onPress={() => selectWifi(item)}
     />
   );
 
@@ -130,22 +131,21 @@ function Wifi(props) {
       </View>
       <View style={WifiStyles.btn}>
         <View style={WifiStyles.btnScan}>
-          <TouchableOpacity onPress={deviceScan} style={[WifiScanStyle.container]}>
+          <TouchableOpacity
+            onPress={deviceScan}
+            style={[WifiScanStyle.container]}>
             <Text style={WifiScanStyle.scan}>SCAN</Text>
           </TouchableOpacity>
         </View>
       </View>
       <View style={WifiStyles.scrollView}>
         <View style={WifiStyles.scrollArea}>
-        <FlatList
-           contentContainerStyle={
-            WifiStyles.scrollArea_contentContainerStyle
-          }
+          <FlatList
+            contentContainerStyle={WifiStyles.scrollArea_contentContainerStyle}
             data={scannedWifi}
             renderItem={renderItem}
             keyExtractor={item => item.SSID}
           />
-
         </View>
       </View>
       <Modal visible={!!connectedDevice} animationType="slide">
@@ -156,7 +156,9 @@ function Wifi(props) {
             alignItems: 'center',
             gap: 10,
           }}>
-          <Text style={ModalStyles.deviceData}>{connectedDevice?.SSID || ''}</Text>
+          <Text style={ModalStyles.deviceData}>
+            {connectedDevice?.SSID || ''}
+          </Text>
           <TextInput
             placeholder="password"
             style={ModalStyles.deviceData}

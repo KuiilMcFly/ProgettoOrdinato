@@ -292,10 +292,9 @@ function Bluetooth({navigation, ...props}) {
               }>
               {scannedDevices.map(device => (
                 <Button
-                  onPressConnect={connect}
                   key={device.id}
                   title={`${device.name}`}
-                  onPress={() => props.onPressConnect(device)}
+                  onPress={() => connect(device)}
                 />
               ))}
             </ScrollView>

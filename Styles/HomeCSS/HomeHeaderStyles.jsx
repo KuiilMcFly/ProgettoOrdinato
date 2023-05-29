@@ -2,6 +2,8 @@ import {StyleSheet} from 'react-native';
 
 export const HomeHeaderStyles = StyleSheet.create({
   container: {
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
     backgroundColor: '#3F51B5',
     flexDirection: 'row',
     alignItems: 'center',

@@ -68,6 +68,7 @@ export const BluetoothCSS = StyleSheet.create({
     height: '60%',
   },
   scrollArea: {
+    borderRadius: 15,
     width: '90%',
     height: '100%',
     justifyContent: 'center',

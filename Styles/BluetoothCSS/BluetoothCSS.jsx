@@ -104,6 +104,7 @@ export const BluetoothCSS = StyleSheet.create({
   stopScan: {
     color: '#fff',
     fontSize: 14,
+    textAlign: 'center',
   },
   stopScan1: {
     height: 55,

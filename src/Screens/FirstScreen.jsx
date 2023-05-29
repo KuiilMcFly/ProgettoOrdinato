@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
-import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
+import {SettingCSS} from '../../Styles/SettingCSS/SettingCSS';
 import {useNavigation} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
 

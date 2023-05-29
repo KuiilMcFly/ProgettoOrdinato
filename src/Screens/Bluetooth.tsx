@@ -11,14 +11,14 @@ import {
 } from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
-import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
-import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
+import {BluetoothCSS} from '../../Styles/BluetoothCSS/BluetoothCSS';
+import ModalStyles from '../../Styles/BluetoothCSS/BluetoothModal1';
 import Spinner from 'react-native-loading-spinner-overlay';
 import {BleManager} from 'react-native-ble-plx';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
-import Base64 from '../Base64';
+import Base64 from '../../Base64';
 import CustomConnectBt from '../Components/CustomConnectBt';
-import i18n from '../i18n';
+import i18n from '../../i18n';
 
 function Bluetooth({navigation, ...props}) {
   const [spinner, setSpinner] = useState(false);
@@ -203,7 +203,7 @@ function Bluetooth({navigation, ...props}) {
         Alert.alert(
           i18n.t('bluetoothNonAttivo'),
           i18n.t('bluetoothNonAttivoMessage'),
-          [{ text: i18n.t('ok') }]
+          [{text: i18n.t('ok')}],
         );
         //Bluetooth is not currently powered on and available to use.
         setBluetoothEnabled(false);
@@ -218,7 +218,7 @@ function Bluetooth({navigation, ...props}) {
 
   function activeBluetooth() {
     _bleManager.current.enable().then(state => {
-      Alert.alert(i18n.t('bluetoothAttivato'),);
+      Alert.alert(i18n.t('bluetoothAttivato'));
     });
   }
 

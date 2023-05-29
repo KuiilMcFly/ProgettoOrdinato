@@ -1,17 +1,17 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import {HomeStyles} from './Styles/HomeCSS/HomeStyle';
-import {Header} from './Components/Header';
-import {Footer} from './Components/Footer';
+import {Header} from './src/Components/Header';
+import {Footer} from './src/Components/Footer';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Bluetooth from './Screens/Bluetooth';
-import Wifi from './Screens/Wifi';
+import Bluetooth from './src/Screens/Bluetooth';
+import Wifi from './src/Screens/Wifi';
 import {enableScreens} from 'react-native-screens';
-import Setting from './Screens/Setting';
+import Setting from './src/Screens/Setting';
 import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import FirstScreen from './Screens/FirstScreen';
+import FirstScreen from './src/Screens/FirstScreen';
 enableScreens();
 
 const Home = ({navigation, ...props}) => {

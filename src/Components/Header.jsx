@@ -1,5 +1,5 @@
 import React from 'react';
-import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
+import {HomeHeaderStyles} from '../../Styles/HomeCSS/HomeHeaderStyles';
 import {View, Text, Image, Touchable, TouchableOpacity} from 'react-native';
 
 export const Header = ({navigation, ...props}) => {

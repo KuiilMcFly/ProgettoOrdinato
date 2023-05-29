@@ -1,4 +1,4 @@
-import {HomeFooterStyles} from '../Styles/HomeCSS/HomeFooterStyles';
+import {HomeFooterStyles} from '../../Styles/HomeCSS/HomeFooterStyles';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 export const Footer = ({navigation, ...props}) => {

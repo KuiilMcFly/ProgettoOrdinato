@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 
 export const SettingCSS = StyleSheet.create({
   container: {
-    paddingTop: 80,
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',

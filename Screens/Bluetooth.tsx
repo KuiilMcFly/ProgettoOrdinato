@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+
 import {
   View,
   ScrollView,
@@ -17,6 +18,7 @@ import {BleManager} from 'react-native-ble-plx';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import Base64 from '../Base64';
 import CustomConnectBt from '../Components/CustomConnectBt';
+import i18n from '../i18n';
 
 function Bluetooth({navigation, ...props}) {
   const [spinner, setSpinner] = useState(false);
@@ -256,14 +258,14 @@ function Bluetooth({navigation, ...props}) {
               <TouchableOpacity
                 style={[BluetoothCSS.container4, props.style]}
                 onPress={() => activeBluetooth()}>
-                <Text style={BluetoothCSS.attiva}>Attiva</Text>
+                <Text style={BluetoothCSS.attiva}>{i18n.t('attiva')}</Text>
               </TouchableOpacity>
             </View>
             <View style={BluetoothCSS.scan1}>
               <TouchableOpacity
                 style={[BluetoothCSS.container2, props.style]}
                 onPress={() => deviceScan()}>
-                <Text style={BluetoothCSS.scan}>Scansione</Text>
+                <Text style={BluetoothCSS.scan}>{i18n.t('scansione')}</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -272,14 +274,18 @@ function Bluetooth({navigation, ...props}) {
               <TouchableOpacity
                 style={[BluetoothCSS.container3, props.style]}
                 onPress={() => stopBluetooth()}>
-                <Text style={BluetoothCSS.disattiva}>Disattiva</Text>
+                <Text style={BluetoothCSS.disattiva}>
+                  {i18n.t('disattiva')}
+                </Text>
               </TouchableOpacity>
             </View>
             <View style={BluetoothCSS.stopScan1}>
               <TouchableOpacity
                 style={[BluetoothCSS.container1, props.style]}
                 onPress={() => deviceStopScan()}>
-                <Text style={BluetoothCSS.stopScan}>Ferma Scansione</Text>
+                <Text style={BluetoothCSS.stopScan}>
+                  {i18n.t('fermaScansione')}
+                </Text>
               </TouchableOpacity>
             </View>
           </View>

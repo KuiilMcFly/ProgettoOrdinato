@@ -2,8 +2,16 @@ import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
 import {useNavigation} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 function FirstScreen({onLanguageSelected, ...props}) {
+  const {i18n} = useTranslation();
+
+  const changeLanguageHandler = language => {
+    i18n.changeLanguage(language);
+    onLanguageSelected();
+  };
+
   const navigation = useNavigation();
   return (
     <View style={SettingCSS.container}>
@@ -13,7 +21,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
         <View style={SettingCSS.materialButtonViolet3}>
           <TouchableOpacity
             onPress={() => {
-              //Logica per cambiare lingua
+              changeLanguageHandler('it');
               onLanguageSelected();
             }}
             style={[SettingCSS.container1, props.style]}>
@@ -24,7 +32,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
         <View style={SettingCSS.materialButtonViolet4}>
           <TouchableOpacity
             onPress={() => {
-              //Logica per cambiare lingua
+              changeLanguageHandler('en');
               onLanguageSelected();
             }}
             style={[SettingCSS.container2, props.style]}>
@@ -35,6 +43,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
         <View style={SettingCSS.materialButtonViolet5}>
           <TouchableOpacity
             onPress={() => {
+              changeLanguageHandler('fr');
               onLanguageSelected();
             }}
             style={[SettingCSS.container3, props.style]}>
@@ -46,6 +55,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
           <TouchableOpacity
             //Logica per cambiare lingua
             onPress={() => {
+              changeLanguageHandler('de');
               onLanguageSelected();
             }}
             style={[SettingCSS.container4, props.style]}>

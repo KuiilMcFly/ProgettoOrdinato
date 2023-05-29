@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export const SettingCSS = StyleSheet.create({
   container: {
+    paddingTop: 80,
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
@@ -62,49 +63,49 @@ export const SettingCSS = StyleSheet.create({
   },
   container1: {
     height: '100%',
-    backgroundColor: "#3F51B5",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    backgroundColor: '#3F51B5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
     borderRadius: 15,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 1
+      height: 1,
     },
     shadowOpacity: 0.35,
     shadowRadius: 5,
     elevation: 2,
     minWidth: 88,
     paddingLeft: 16,
-    paddingRight: 16
+    paddingRight: 16,
   },
   italiano: {
-    color: "#fff",
-    fontSize: 14
+    color: '#fff',
+    fontSize: 14,
   },
   container2: {
     height: '100%',
-    backgroundColor: "#3F51B5",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    backgroundColor: '#3F51B5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
     borderRadius: 15,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 1
+      height: 1,
     },
     shadowOpacity: 0.35,
     shadowRadius: 5,
     elevation: 2,
     minWidth: 88,
     paddingLeft: 16,
-    paddingRight: 16
+    paddingRight: 16,
   },
   english: {
-    color: "#fff",
-    fontSize: 14
+    color: '#fff',
+    fontSize: 14,
   },
   container3: {
     height: '100%',

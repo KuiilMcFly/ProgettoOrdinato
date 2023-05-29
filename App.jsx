@@ -56,7 +56,7 @@ const App = ({navigation}) => {
   return (
     <NavigationContainer>
       {firstLaunch ? (
-        <FirstScreen />
+        <FirstScreen navigation={navigation} />
       ) : (
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />

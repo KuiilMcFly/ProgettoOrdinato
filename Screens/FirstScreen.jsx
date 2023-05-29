@@ -35,9 +35,6 @@ function FirstScreen({navigation, ...props}) {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={BluetoothCSS.footer}>
-        <Footer navigation={navigation} />
-      </View>
     </View>
   );
 }

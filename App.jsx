@@ -45,19 +45,29 @@ async function checkFirstLaunch() {
 
 const App = ({navigation}) => {
   const [firstLaunch, setFirstLaunch] = useState(null);
+  const [showFirstScreen, setShowFirstScreen] = useState(false);
+
   // useEffect che controlla se è effettivamente la prima volta
   //che l'app viene lanciata per mostrare il FirstScreen per la selezione lingua
   useEffect(() => {
-    checkFirstLaunch().then(isFirstLaunch => setFirstLaunch(isFirstLaunch));
+    checkFirstLaunch().then(isFirstLaunch => {
+      setFirstLaunch(isFirstLaunch);
+      setShowFirstScreen(isFirstLaunch);
+    });
   }, []);
 
   if (firstLaunch === null) {
     return null;
   }
+
+  const handleLanguageSelection = () => {
+    setShowFirstScreen(false);
+  };
+
   return (
     <NavigationContainer>
-      {firstLaunch ? (
-        <FirstScreen navigation={navigation} />
+      {showFirstScreen ? (
+        <FirstScreen onLanguageSelected={handleLanguageSelection} />
       ) : (
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />

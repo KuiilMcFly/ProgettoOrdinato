@@ -1,8 +1,10 @@
 import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
+import {useNavigation} from '@react-navigation/native';
 
-function FirstScreen({navigation, ...props}) {
+function FirstScreen({onLanguageSelected, ...props}) {
+  const navigation = useNavigation();
   return (
     <View style={SettingCSS.container}>
       <View style={SettingCSS.textBtn}>
@@ -12,7 +14,7 @@ function FirstScreen({navigation, ...props}) {
           <TouchableOpacity
             onPress={() => {
               //Logica per cambiare lingua
-              navigation.navigate('Home');
+              onLanguageSelected();
             }}
             style={[SettingCSS.container1, props.style]}>
             <Text style={SettingCSS.italiano}>Italiano</Text>
@@ -23,7 +25,7 @@ function FirstScreen({navigation, ...props}) {
           <TouchableOpacity
             onPress={() => {
               //Logica per cambiare lingua
-              navigation.navigate('Home');
+              onLanguageSelected();
             }}
             style={[SettingCSS.container2, props.style]}>
             <Text style={SettingCSS.english}>English</Text>
@@ -32,9 +34,8 @@ function FirstScreen({navigation, ...props}) {
 
         <View style={SettingCSS.materialButtonViolet5}>
           <TouchableOpacity
-            //Logica per cambiare lingua
             onPress={() => {
-              navigation.navigate('Home');
+              onLanguageSelected();
             }}
             style={[SettingCSS.container3, props.style]}>
             <Text style={SettingCSS.francais}>Français</Text>
@@ -45,7 +46,7 @@ function FirstScreen({navigation, ...props}) {
           <TouchableOpacity
             //Logica per cambiare lingua
             onPress={() => {
-              navigation.navigate('Home');
+              onLanguageSelected();
             }}
             style={[SettingCSS.container4, props.style]}>
             <Text style={SettingCSS.deutsch}>Deutsch</Text>

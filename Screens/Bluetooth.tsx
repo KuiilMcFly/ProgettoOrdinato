@@ -256,14 +256,14 @@ function Bluetooth({navigation, ...props}) {
               <TouchableOpacity
                 style={[BluetoothCSS.container4, props.style]}
                 onPress={() => activeBluetooth()}>
-                <Text style={BluetoothCSS.attiva}>ATTIVA</Text>
+                <Text style={BluetoothCSS.attiva}>Attiva</Text>
               </TouchableOpacity>
             </View>
             <View style={BluetoothCSS.scan1}>
               <TouchableOpacity
                 style={[BluetoothCSS.container2, props.style]}
                 onPress={() => deviceScan()}>
-                <Text style={BluetoothCSS.scan}>SCAN</Text>
+                <Text style={BluetoothCSS.scan}>Scansione</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -272,14 +272,14 @@ function Bluetooth({navigation, ...props}) {
               <TouchableOpacity
                 style={[BluetoothCSS.container3, props.style]}
                 onPress={() => stopBluetooth()}>
-                <Text style={BluetoothCSS.disattiva}>DISATTIVA</Text>
+                <Text style={BluetoothCSS.disattiva}>Disattiva</Text>
               </TouchableOpacity>
             </View>
             <View style={BluetoothCSS.stopScan1}>
               <TouchableOpacity
                 style={[BluetoothCSS.container1, props.style]}
                 onPress={() => deviceStopScan()}>
-                <Text style={BluetoothCSS.stopScan}>STOP SCAN</Text>
+                <Text style={BluetoothCSS.stopScan}>Ferma Scansione</Text>
               </TouchableOpacity>
             </View>
           </View>

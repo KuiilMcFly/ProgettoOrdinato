@@ -45,7 +45,8 @@ async function checkFirstLaunch() {
 
 const App = ({navigation}) => {
   const [firstLaunch, setFirstLaunch] = useState(null);
-
+  // useEffect che controlla se è effettivamente la prima volta
+  //che l'app viene lanciata per mostrare il FirstScreen per la selezione lingua
   useEffect(() => {
     checkFirstLaunch().then(isFirstLaunch => setFirstLaunch(isFirstLaunch));
   }, []);

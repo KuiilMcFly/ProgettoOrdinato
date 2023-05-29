@@ -134,7 +134,7 @@ function Wifi(props) {
           <TouchableOpacity
             onPress={deviceScan}
             style={[WifiScanStyle.container]}>
-            <Text style={WifiScanStyle.scan}>SCAN</Text>
+            <Text style={WifiScanStyle.scan}>Scansione</Text>
           </TouchableOpacity>
         </View>
       </View>

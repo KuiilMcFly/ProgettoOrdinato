@@ -19,8 +19,13 @@ export const BluetoothCSS = StyleSheet.create({
     width: 360,
   },
   btn: {
-    width: 291,
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    width: '100%',
     height: 137,
+    paddingTop: 10,
   },
   btnAttiva: {
     height: 55,

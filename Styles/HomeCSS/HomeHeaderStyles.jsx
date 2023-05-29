@@ -22,7 +22,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     width: '100%',
     height: 56,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   home: {

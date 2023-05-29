@@ -14,7 +14,13 @@ function FirstScreen({onLanguageSelected, ...props}) {
 
   const navigation = useNavigation();
   return (
-    <View style={SettingCSS.container}>
+    <View
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+      }}>
       <View style={SettingCSS.textBtn}>
         <Text style={SettingCSS.lingua}>Lingua :</Text>
 

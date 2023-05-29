@@ -9,6 +9,9 @@ import Bluetooth from './Screens/Bluetooth';
 import Wifi from './Screens/Wifi';
 import {enableScreens} from 'react-native-screens';
 import Setting from './Screens/Setting';
+import {useState, useEffect} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import FirstScreen from './Screens/FirstScreen';
 enableScreens();
 
 const Home = ({navigation, ...props}) => {
@@ -26,15 +29,42 @@ const Home = ({navigation, ...props}) => {
 
 const Stack = createNativeStackNavigator();
 
+async function checkFirstLaunch() {
+  try {
+    const firstLaunch = await AsyncStorage.getItem('firstLaunch');
+    if (firstLaunch === null) {
+      await AsyncStorage.setItem('firstLaunch', 'false');
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.error('Failed to check first launch:', error);
+    return false;
+  }
+}
+
 const App = ({navigation}) => {
+  const [firstLaunch, setFirstLaunch] = useState(null);
+
+  useEffect(() => {
+    checkFirstLaunch().then(isFirstLaunch => setFirstLaunch(isFirstLaunch));
+  }, []);
+
+  if (firstLaunch === null) {
+    return null;
+  }
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Bluetooth" component={Bluetooth} />
-        <Stack.Screen name="Wifi" component={Wifi} />
-        <Stack.Screen name="Setting" component={Setting} />
-      </Stack.Navigator>
+      {firstLaunch ? (
+        <FirstScreen />
+      ) : (
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Bluetooth" component={Bluetooth} />
+          <Stack.Screen name="Wifi" component={Wifi} />
+          <Stack.Screen name="Setting" component={Setting} />
+        </Stack.Navigator>
+      )}
     </NavigationContainer>
   );
 };

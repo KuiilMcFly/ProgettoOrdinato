@@ -25,7 +25,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
               onLanguageSelected();
             }}
             style={[SettingCSS.container1, props.style]}>
-            <Text style={SettingCSS.italiano}>Italiano</Text>
+            <Text style={SettingCSS.italiano}>Italiano 🇮🇹</Text>
           </TouchableOpacity>
         </View>
 
@@ -36,7 +36,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
               onLanguageSelected();
             }}
             style={[SettingCSS.container2, props.style]}>
-            <Text style={SettingCSS.english}>English</Text>
+            <Text style={SettingCSS.english}>English 🇬🇧</Text>
           </TouchableOpacity>
         </View>
 
@@ -47,7 +47,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
               onLanguageSelected();
             }}
             style={[SettingCSS.container3, props.style]}>
-            <Text style={SettingCSS.francais}>Français</Text>
+            <Text style={SettingCSS.francais}>Français 🇫🇷</Text>
           </TouchableOpacity>
         </View>
 
@@ -59,7 +59,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
               onLanguageSelected();
             }}
             style={[SettingCSS.container4, props.style]}>
-            <Text style={SettingCSS.deutsch}>Deutsch</Text>
+            <Text style={SettingCSS.deutsch}>Deutsch 🇩🇪</Text>
           </TouchableOpacity>
         </View>
       </View>

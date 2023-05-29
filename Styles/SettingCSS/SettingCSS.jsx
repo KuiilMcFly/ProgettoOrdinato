@@ -81,7 +81,7 @@ export const SettingCSS = StyleSheet.create({
   },
   italiano: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 16,
   },
   container2: {
     height: '100%',
@@ -104,7 +104,7 @@ export const SettingCSS = StyleSheet.create({
   },
   english: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 16,
   },
   container3: {
     height: '100%',
@@ -127,7 +127,7 @@ export const SettingCSS = StyleSheet.create({
   },
   francais: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 16,
   },
   container4: {
     height: '100%',
@@ -150,6 +150,6 @@ export const SettingCSS = StyleSheet.create({
   },
   deutsch: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 16,
   },
 });

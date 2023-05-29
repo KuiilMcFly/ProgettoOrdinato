@@ -9,7 +9,7 @@ function Setting({navigation, ...props}) {
   return (
     <View style={SettingCSS.container}>
       <View style={BluetoothCSS.header}>
-        <Header navigation={navigation} />
+        <Header title={'IMPOSTAZIONI'} navigation={navigation} />
       </View>
       <View style={SettingCSS.textBtn}>
         <Text style={SettingCSS.lingua}>Lingua :</Text>

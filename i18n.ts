@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import {initReactI18next} from 'react-i18next';
 
 const resources = {
   it: {
@@ -9,11 +9,12 @@ const resources = {
       disattiva: 'Disattiva',
       fermaScansione: 'Ferma Scansione',
       ùbluetoothNonAttivo: 'Bluetooth non attivo',
-      bluetoothNonAttivoMessage:'Per effettuare la scansione dei dispositivi, attiva il Bluetooth.',
+      bluetoothNonAttivoMessage:
+        'Per effettuare la scansione dei dispositivi, attiva il Bluetooth.',
       bluetoothAttivato: 'Bluetooth attivato!',
       bluetoothDisabilitato: 'Bluetooth disattivato!',
       disconnessioneRiuscita: 'Disconnessione riuscita!',
-      warn: 'Attenzione, non sono riuscito a disconnetterti'
+      warn: 'Attenzione, non sono riuscito a disconnetterti',
     },
   },
   en: {
@@ -23,11 +24,12 @@ const resources = {
       disattiva: 'Deactivate',
       fermaScansione: 'Stop Scan',
       bluetoothNonAttivo: 'Bluetooth is not active',
-      bluetoothNonAttivoMessage: 'To scan for devices, please enable Bluetooth.',
+      bluetoothNonAttivoMessage:
+        'To scan for devices, please enable Bluetooth.',
       bluetoothAttivato: 'Bluetooth activated!',
       bluetoothDisabilitato: 'Bluetooth disabled!',
       disconnessioneRiuscita: 'Logout successful!',
-      warn: 'Attention, I was unable to disconnect you'
+      warn: 'Attention, I was unable to disconnect you',
     },
   },
   fr: {
@@ -37,11 +39,12 @@ const resources = {
       disattiva: 'Désactiver',
       fermaScansione: 'Arrêter la numérisation',
       bluetoothNonAttivo: 'Bluetooth non actif',
-      bluetoothNonAttivoMessage:'Pour rechercher des appareils, veuillez activer Bluetooth.',
+      bluetoothNonAttivoMessage:
+        'Pour rechercher des appareils, veuillez activer Bluetooth.',
       bluetoothAttivato: 'Bluetooth activé !',
       bluetoothDisabilitato: 'Bluetooth désactivé !',
       disconnessioneRiuscita: 'Déconnexion réussie !',
-      warn: 'Attention, je n ai pas pu vous déconnecter'
+      warn: 'Attention, je n ai pas pu vous déconnecter',
     },
   },
   de: {
@@ -51,21 +54,21 @@ const resources = {
       disattiva: 'Deaktivieren',
       fermaScansione: 'Stoppen Sie den Scanvorgang',
       bluetoothNonAttivo: 'Bluetooth ist nicht aktiv',
-      bluetoothNonAttivoMessage:'Um nach Geräten zu suchen, aktivieren Sie bitte Bluetooth.',
+      bluetoothNonAttivoMessage:
+        'Um nach Geräten zu suchen, aktivieren Sie bitte Bluetooth.',
       bluetoothAttivato: 'Bluetooth aktiviert!',
       bluetoothDisabilitato: 'Bluetooth deaktiviert!',
       disconnessioneRiuscita: 'Abmeldung erfolgreich!',
-      warn: 'Achtung, ich konnte die Verbindung nicht trennen'
+      warn: 'Achtung, ich konnte die Verbindung nicht trennen',
     },
   },
 };
 
 // Configurazione di i18n
 i18n.use(initReactI18next).init({
-  compatibilityJSON: 'v3',
   resources,
-  lng: 'en',
-  fallbackLng: 'en',
+  lng: 'it',
+  fallbackLng: 'it',
   interpolation: {
     escapeValue: false,
   },

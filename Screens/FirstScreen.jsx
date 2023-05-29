@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
-import {Header} from '../Components/Header';
-import {Footer} from '../Components/Footer';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
-import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 
 function FirstScreen({navigation, ...props}) {
   return (

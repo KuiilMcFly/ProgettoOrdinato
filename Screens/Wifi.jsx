@@ -19,6 +19,7 @@ import {useNavigation} from '@react-navigation/native';
 import {FlatList} from 'react-native';
 import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
 import CustomConnectBt from '../Components/CustomConnectBt';
+import i18n from '../i18n';
 
 function Wifi(props) {
   const [passwordWifi, setPasswordWifi] = useState('');
@@ -134,7 +135,7 @@ function Wifi(props) {
           <TouchableOpacity
             onPress={deviceScan}
             style={[WifiScanStyle.container]}>
-            <Text style={WifiScanStyle.scan}>Scansione</Text>
+            <Text style={WifiScanStyle.scan}>{i18n.t('scansione')}</Text>
           </TouchableOpacity>
         </View>
       </View>

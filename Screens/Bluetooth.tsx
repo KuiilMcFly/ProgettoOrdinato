@@ -201,9 +201,9 @@ function Bluetooth({navigation, ...props}) {
         return true;
       } else if (state === 'PoweredOff') {
         Alert.alert(
-          'Bluetooth non attivo',
-          'Per effettuare la scansione dei dispositivi, attiva il Bluetooth.',
-          [{text: 'OK'}],
+          i18n.t('bluetoothNonAttivo'),
+          i18n.t('bluetoothNonAttivoMessage'),
+          [{ text: i18n.t('ok') }]
         );
         //Bluetooth is not currently powered on and available to use.
         setBluetoothEnabled(false);
@@ -218,24 +218,24 @@ function Bluetooth({navigation, ...props}) {
 
   function activeBluetooth() {
     _bleManager.current.enable().then(state => {
-      Alert.alert('bluetooth attivato!');
+      Alert.alert(i18n.t('bluetoothAttivato'),);
     });
   }
 
   function stopBluetooth() {
     _bleManager.current.disable().then(state => {
-      Alert.alert('bluetooth disabilitato!');
+      Alert.alert(i18n.t('bluetoothDisabilitato'));
     });
   }
 
   function stopBluetoothConnection(deviceId) {
     _bleManager.current.cancelDeviceConnection(deviceId).then(
       res => {
-        Alert.alert('Disconnessione riuscita!');
+        Alert.alert(i18n.t('disconnessioneRiuscita'));
         setSelectedDevice(null);
       },
       err => {
-        Alert.alert('Attenzione, non sono riuscito a disconnetterti');
+        Alert.alert(i18n.t('warn'));
       },
     );
   }

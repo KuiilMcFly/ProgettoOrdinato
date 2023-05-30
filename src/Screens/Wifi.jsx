@@ -11,13 +11,13 @@ import {
 } from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
-import {WifiScanStyle} from '../../Styles/WifiCSS/WifiScanCSS';
-import {WifiStyles} from '../../Styles/WifiCSS/WifiStyles';
+import {WifiScanStyle} from '../Styles/WifiCSS/WifiScanCSS';
+import {WifiStyles} from '../Styles/WifiCSS/WifiStyles';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import WifiManager from 'react-native-wifi-reborn';
 import {useNavigation} from '@react-navigation/native';
 import {FlatList} from 'react-native';
-import ModalStyles from '../../Styles/BluetoothCSS/BluetoothModal1';
+import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
 import CustomConnectBt from '../Components/CustomConnectBt';
 import i18n from '../../i18n';
 

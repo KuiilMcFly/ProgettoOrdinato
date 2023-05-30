@@ -1,5 +1,5 @@
 import React from 'react';
-import {HomeHeaderStyles} from '../../Styles/HomeCSS/HomeHeaderStyles';
+import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import {View, Text, Image, Touchable, TouchableOpacity} from 'react-native';
 
 export const Header = ({navigation, ...props}) => {
@@ -9,7 +9,7 @@ export const Header = ({navigation, ...props}) => {
         <Text style={HomeHeaderStyles.home}>{props.title}</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
           <Image
-            source={require('../../assets/HomeImg/settings.png')}
+            source={require('../assets/HomeImg/settings.png')}
             resizeMode="contain"
             style={HomeHeaderStyles.image}></Image>
         </TouchableOpacity>

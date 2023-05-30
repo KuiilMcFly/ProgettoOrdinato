@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
-import {BluetoothCSS} from '../../Styles/BluetoothCSS/BluetoothCSS';
-import ModalStyles from '../../Styles/BluetoothCSS/BluetoothModal1';
+import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
+import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
 import Spinner from 'react-native-loading-spinner-overlay';
 import {BleManager} from 'react-native-ble-plx';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';

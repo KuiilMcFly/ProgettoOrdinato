@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import {HomeStyles} from './Styles/HomeCSS/HomeStyle';
+import {HomeStyles} from './src/Styles/HomeCSS/HomeStyle';
 import {Header} from './src/Components/Header';
 import {Footer} from './src/Components/Footer';
 import {NavigationContainer} from '@react-navigation/native';

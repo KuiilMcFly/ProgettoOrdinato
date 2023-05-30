@@ -177,7 +177,7 @@ export const BluetoothCSS = StyleSheet.create({
   },
   container4: {
     height: '100%',
-    backgroundColor: '#F44336',
+    backgroundColor: '#36eef4',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',

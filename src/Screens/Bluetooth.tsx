@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
+import {LogBox} from 'react-native';
 import {
   View,
   ScrollView,
@@ -28,6 +29,7 @@ function Bluetooth({navigation, ...props}) {
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [characteristicUUID, setCharacteristicUUID] = useState(null);
+  LogBox.ignoreLogs(['new NativeEventEmitter']);
 
   const [isDisconnectedModalVisible, setIsDisconnectedModalVisible] =
     useState(false);

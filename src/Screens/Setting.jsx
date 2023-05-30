@@ -25,7 +25,6 @@ function Setting({navigation, ...props}) {
           <TouchableOpacity
             onPress={() => {
               changeLanguageHandler('it');
-        
             }}
             style={[SettingCSS.container1, props.style]}>
             <Text style={SettingCSS.italiano}>Italiano 🇮🇹</Text>
@@ -36,7 +35,6 @@ function Setting({navigation, ...props}) {
           <TouchableOpacity
             onPress={() => {
               changeLanguageHandler('en');
-    
             }}
             style={[SettingCSS.container2, props.style]}>
             <Text style={SettingCSS.english}>English 🇬🇧</Text>
@@ -47,7 +45,6 @@ function Setting({navigation, ...props}) {
           <TouchableOpacity
             onPress={() => {
               changeLanguageHandler('fr');
-            
             }}
             style={[SettingCSS.container3, props.style]}>
             <Text style={SettingCSS.francais}>Français 🇫🇷</Text>
@@ -58,7 +55,6 @@ function Setting({navigation, ...props}) {
           <TouchableOpacity
             onPress={() => {
               changeLanguageHandler('de');
-             
             }}
             style={[SettingCSS.container4, props.style]}>
             <Text style={SettingCSS.deutsch}>Deutsch 🇩🇪</Text>

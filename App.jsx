@@ -12,17 +12,23 @@ import Setting from './src/Screens/Setting';
 import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FirstScreen from './src/Screens/FirstScreen';
+import LinearGradient from 'react-native-linear-gradient';
 enableScreens();
 
 const Home = ({navigation, ...props}) => {
   return (
-    <View style={HomeStyles.container}>
+    <View>
+      <LinearGradient
+      colors={['#82c0d1', '#508796', '#d7d8db']}
+      style={HomeStyles.container}
+      >
       <View style={HomeStyles.header}>
         <Header navigation={navigation} title={'HOME'} />
       </View>
       <View style={HomeStyles.footer}>
         <Footer navigation={navigation} />
       </View>
+      </LinearGradient>
     </View>
   );
 };

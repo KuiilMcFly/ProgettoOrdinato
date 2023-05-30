@@ -50,7 +50,6 @@ export const SettingCSS = StyleSheet.create({
     width: 120,
     borderRadius: 15,
     marginTop: 22,
-    marginLeft: 3,
   },
   footer: {
     width: '100%',

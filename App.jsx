@@ -80,7 +80,7 @@ const App = ({navigation}) => {
       {showFirstScreen ? (
         <FirstScreen onLanguageSelected={handleLanguageSelection} />
       ) : (
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator initialRouteName='Bluetooth' screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Bluetooth" component={Bluetooth} />
           <Stack.Screen name="Wifi" component={Wifi} />

@@ -110,7 +110,7 @@ function Bluetooth({navigation, ...props}) {
           null,
           (error, device: any) => {
             if (error) {
-              console.log(JSON.stringify(error));
+              console.log(JSON.stringify(error)); //JSON CHE CI HA SALVATO LA VITA
               return;
             }
             console.log('Device id:', device.id);

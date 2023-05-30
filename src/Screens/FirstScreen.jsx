@@ -3,7 +3,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
 import {useNavigation} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
-
+import LinearGradient from 'react-native-linear-gradient';
 function FirstScreen({onLanguageSelected, ...props}) {
   const {i18n} = useTranslation();
 
@@ -14,13 +14,17 @@ function FirstScreen({onLanguageSelected, ...props}) {
 
   const navigation = useNavigation();
   return (
-    <View
+    <View>
+        <LinearGradient
+      colors={['#82c0d1', '#508796', '#d7d8db']}
       style={{
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
         height: '100%',
-      }}>
+      }}
+      >
+
       <View style={SettingCSS.textBtn}>
         <Text style={SettingCSS.lingua}>Lingua :</Text>
 
@@ -69,6 +73,7 @@ function FirstScreen({onLanguageSelected, ...props}) {
           </TouchableOpacity>
         </View>
       </View>
+              </LinearGradient>
     </View>
   );
 }

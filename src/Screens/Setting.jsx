@@ -6,6 +6,7 @@ import {Footer} from '../Components/Footer';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
 import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 import {useTranslation} from 'react-i18next';
+import LinearGradient from 'react-native-linear-gradient';
 
 function Setting({navigation, ...props}) {
   const [spinner, setSpinner] = useState(false);
@@ -21,7 +22,11 @@ function Setting({navigation, ...props}) {
 
   };
   return (
-    <View style={SettingCSS.container}>
+    <View>
+      <LinearGradient
+      colors={['#82c0d1', '#508796', '#d7d8db']}
+      style={SettingCSS.container}
+      >
       <Spinner
         visible={spinner}
         textContent={'Loading...'}
@@ -76,6 +81,7 @@ function Setting({navigation, ...props}) {
       <View style={BluetoothCSS.footer}>
         <Footer navigation={navigation} />
       </View>
+            </LinearGradient>
     </View>
   );
 }

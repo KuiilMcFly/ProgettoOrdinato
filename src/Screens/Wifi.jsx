@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import LinearGradient from 'react-native-linear-gradient';
 import {
   Button,
   Text,
@@ -126,7 +127,12 @@ function Wifi(props) {
   );
 
   return (
-    <View style={WifiStyles.container}>
+    <View>
+      <LinearGradient
+      colors={['#82c0d1', '#508796', '#d7d8db']}
+      style={WifiStyles.container}
+      >
+
       <View style={WifiStyles.header}>
         <Header title={'WI-FI'} navigation={navigation} />
       </View>
@@ -177,6 +183,7 @@ function Wifi(props) {
       <View style={WifiStyles.footer}>
         <Footer navigation={navigation} />
       </View>
+              </LinearGradient>
     </View>
   );
 }

@@ -12,6 +12,7 @@ function Setting({navigation, ...props}) {
   const [spinner, setSpinner] = useState(false);
   const {i18n} = useTranslation();
 
+  //cambia la lingua globale dell'applicazione
   const changeLanguageHandler = language => {
     setSpinner(true);
     i18n.changeLanguage(language).then((res)=>{

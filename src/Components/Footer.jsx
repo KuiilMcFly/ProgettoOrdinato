@@ -5,6 +5,7 @@ import {useTranslation} from 'react-i18next';
 export const Footer = ({navigation, bluetoothConnection = false, ...props}) => {
   const {i18n} = useTranslation();
 
+  //verifica stato del bluetooth
   function checkBluetooth(){
     if(bluetoothConnection){
       navigation.navigate('Wifi')

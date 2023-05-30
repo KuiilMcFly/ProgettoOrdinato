@@ -70,10 +70,6 @@ const App = ({navigation}) => {
     setShowFirstScreen(false);
   };
 
-/*   const Settings = props => (
-    <Setting onLanguageSelected={handleLanguageSelection} {...props} />
-  ); */
-  
 
   return (
     <NavigationContainer>

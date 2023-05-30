@@ -42,7 +42,7 @@ function Bluetooth({navigation, ...props}) {
     if (!_bleManager.current) {
       _bleManager.current = new BleManager();
     }
-
+    deviceScan();
     return () => {};
   }, []);
 
@@ -114,9 +114,6 @@ function Bluetooth({navigation, ...props}) {
               console.log(JSON.stringify(error)); //JSON CHE CI HA SALVATO LA VITA
               return;
             }
-            console.log('Device id:', device.id);
-            console.log('Device name:', device.name);
-
             if (device.name && device.name !== 'Unknown Device') {
               if (!devices.has(device.id)) {
                 devices.set(device.id, {

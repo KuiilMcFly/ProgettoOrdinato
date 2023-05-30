@@ -23,9 +23,9 @@ export const SettingCSS = StyleSheet.create({
     fontFamily: 'roboto-700',
     color: '#121212',
     height: 24,
-    width: 57,
+    width: '100%',
     fontSize: 15,
-    marginLeft: 34,
+    textAlign: 'center',
   },
   materialButtonViolet3: {
     height: 52,

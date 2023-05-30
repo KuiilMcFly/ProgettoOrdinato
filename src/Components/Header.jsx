@@ -4,6 +4,7 @@ import {View, Text, Image, Touchable, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 
+
 export const Header = ({navigation, ...props}) => {
   return (
     <View style={props.style}>

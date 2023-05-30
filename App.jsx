@@ -13,6 +13,7 @@ import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FirstScreen from './src/Screens/FirstScreen';
 import LinearGradient from 'react-native-linear-gradient';
+
 enableScreens();
 
 const Home = ({navigation, ...props}) => {

@@ -19,13 +19,14 @@ import {BleManager} from 'react-native-ble-plx';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import Base64 from '../../Base64';
 import CustomConnectBt from '../Components/CustomConnectBt';
-import i18n from '../../i18n';
+import {useTranslation} from 'react-i18next';
 
 function Bluetooth({navigation, ...props}) {
+  const {i18n} = useTranslation();
   const [spinner, setSpinner] = useState(false);
   const [scannedDevices, setScannedDevices] = useState([]);
   const [scannedDeviceCount, setScannedDeviceCount] = useState(0);
-  const [connectedDevice, setConnectedDevice] = useState(null);
+  const [connectedDevice, setConnectedDevice] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [characteristicUUID, setCharacteristicUUID] = useState(null);
@@ -41,7 +42,7 @@ function Bluetooth({navigation, ...props}) {
     if (!_bleManager.current) {
       _bleManager.current = new BleManager();
     }
-
+    deviceScan();
     return () => {};
   }, []);
 
@@ -113,9 +114,6 @@ function Bluetooth({navigation, ...props}) {
               console.log(JSON.stringify(error)); //JSON CHE CI HA SALVATO LA VITA
               return;
             }
-            console.log('Device id:', device.id);
-            console.log('Device name:', device.name);
-
             if (device.name && device.name !== 'Unknown Device') {
               if (!devices.has(device.id)) {
                 devices.set(device.id, {
@@ -150,43 +148,64 @@ function Bluetooth({navigation, ...props}) {
     setSpinner(true);
     _bleManager.current.connectToDevice(_device.id).then(
       connectedDevice => {
-        connectedDevice
-          .discoverAllServicesAndCharacteristics()
-          .then(discoveredDev => {
-            discoveredDev.services().then(async services => {
-              for (const service of services) {
-                const characteristics = await service.characteristics();
-                for (const characteristic of characteristics) {
-                  console.log('Characteristic UUID:', characteristic.uuid);
-                  if (characteristic.uuid.toLowerCase().includes('00002a19')) {
-                    characteristic.read().then(value => {
-                      console.log(value.value);
-                      const batteryString = Base64.atob(value.value);
-                      const newBattery = batteryString.charCodeAt(0);
-                      console.log(
-                        'Percentuale di carica della batteria:',
-                        newBattery,
-                      );
+        connectedDevice.isConnected().then(bluetoothStatus => {
+          setConnectedDevice(true);
+          connectedDevice
+            .discoverAllServicesAndCharacteristics()
+            .then(discoveredDev => {
+              discoveredDev.services().then(
+                async services => {
+                  for (const service of services) {
+                    const characteristics = await service.characteristics();
+                    for (const characteristic of characteristics) {
+                      console.log('Characteristic UUID:', characteristic.uuid);
+                      if (
+                        characteristic.uuid.toLowerCase().includes('00002a19')
+                      ) {
+                        characteristic.read().then(
+                          value => {
+                            console.log(value.value);
+                            const batteryString = Base64.atob(value.value);
+                            const newBattery = batteryString.charCodeAt(0);
+                            console.log(
+                              'Percentuale di carica della batteria:',
+                              newBattery,
+                            );
 
-                      // Aggiorna le variabili di stato
-                      setBatteryLevel(newBattery);
-                      setCharacteristicUUID(characteristic.uuid);
-                      setSelectedDevice(connectedDevice);
-                      setSpinner(false);
-                    });
+                            // Aggiorna le variabili di stato
+                            setBatteryLevel(newBattery);
+                            setCharacteristicUUID(characteristic.uuid);
+                            setSelectedDevice(connectedDevice);
+                            setSpinner(false);
+                          },
+                          err => {
+                            Alert.alert('Connessione non riuscita');
+                            setSpinner(false);
+                          },
+                        );
+                      }
+                    }
                   }
-                }
-              }
+                },
+                err => {
+                  Alert.alert('Connessione non riuscita');
+                  setSpinner(false);
+                },
+              );
             });
-          });
+        });
+        console.log();
 
         // Gestisci la disconnessione
         connectedDevice.onDisconnected(() => {
           setIsDisconnectedModalVisible(true);
           setSelectedDevice(null);
+          setConnectedDevice(false);
         });
       },
       err => {
+        console.log(JSON.stringify(err));
+
         Alert.alert('Connessione non riuscita');
         setSpinner(false);
       },
@@ -243,10 +262,9 @@ function Bluetooth({navigation, ...props}) {
 
   //Visualizzazione
   return (
-      <LinearGradient
+    <LinearGradient
       colors={['#82c0d1', '#508796', '#d7d8db']}
-      style={BluetoothCSS.container}
-      >
+      style={BluetoothCSS.container}>
       <Spinner
         visible={spinner}
         textContent={'Loading...'}
@@ -340,7 +358,7 @@ function Bluetooth({navigation, ...props}) {
                 <Button
                   title="Close"
                   onPress={() => stopBluetoothConnection(selectedDevice?.id)}
-                  />
+                />
               </View>
             </Modal>
 
@@ -366,7 +384,10 @@ function Bluetooth({navigation, ...props}) {
           </View>
         </View>
         <View style={BluetoothCSS.footer}>
-          <Footer navigation={navigation} />
+          <Footer
+            navigation={navigation}
+            bluetoothConnection={connectedDevice}
+          />
         </View>
       </View>
     </LinearGradient>

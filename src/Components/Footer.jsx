@@ -1,7 +1,20 @@
 import {HomeFooterStyles} from '../Styles/HomeCSS/HomeFooterStyles';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-export const Footer = ({navigation, ...props}) => {
+import {useTranslation} from 'react-i18next';
+export const Footer = ({navigation, bluetoothConnection = false, ...props}) => {
+  const {i18n} = useTranslation();
+
+  function checkBluetooth(){
+    if(bluetoothConnection){
+      navigation.navigate('Wifi')
+    }
+    else{
+      Alert.alert(i18n.t("bluetoothConnectionAlert"))
+    }
+
+  }
+
   return (
     <View style={props.style}>
       <LinearGradient
@@ -22,7 +35,8 @@ export const Footer = ({navigation, ...props}) => {
               style={HomeFooterStyles.image2}></Image>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+          <TouchableOpacity onPress={() => 
+           checkBluetooth()}>
             <Image
               source={require('../assets/HomeImg/wifi.png')}
               resizeMode="contain"

@@ -16,7 +16,8 @@ const resources = {
       disconnessioneRiuscita: 'Disconnessione riuscita!',
       warn: 'Attenzione, non sono riuscito a disconnetterti',
       lingua: 'Lingua',
-      linguaCambiata: 'Lingua cambiata!'
+      linguaCambiata: 'Lingua cambiata!',
+      impostazioni: 'IMPOSTAZIONI',
     },
   },
   en: {
@@ -33,7 +34,8 @@ const resources = {
       disconnessioneRiuscita: 'Logout successful!',
       warn: 'Attention, I was unable to disconnect you',
       lingua: 'Language',
-      linguaCambiata: 'Language changed!'
+      linguaCambiata: 'Language changed!',
+      impostazioni: 'SETTING',
     },
   },
   fr: {
@@ -50,7 +52,8 @@ const resources = {
       disconnessioneRiuscita: 'Déconnexion réussie !',
       warn: 'Attention, je n ai pas pu vous déconnecter',
       lingua: 'Langue',
-      linguaCambiata: 'La langue a changé!'
+      linguaCambiata: 'La langue a changé!',
+      impostazioni: 'PARAMÈTRE',
     },
   },
   de: {
@@ -67,7 +70,8 @@ const resources = {
       disconnessioneRiuscita: 'Abmeldung erfolgreich!',
       warn: 'Achtung, ich konnte die Verbindung nicht trennen',
       lingua: 'Zunge',
-      linguaCambiata: 'Sprache geändert!'
+      linguaCambiata: 'Sprache geändert!',
+      impostazioni: 'EINSTELLUNG',
     },
   },
 };

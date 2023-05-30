@@ -33,7 +33,7 @@ function Setting({navigation, ...props}) {
         textStyle={{color: '#FFF'}}
       />
       <View style={BluetoothCSS.header}>
-        <Header title={'IMPOSTAZIONI'} navigation={navigation} />
+        <Header title={i18n.t('impostazioni')} navigation={navigation} />
       </View>
       <View style={SettingCSS.textBtn}>
         <Text style={SettingCSS.lingua}>{i18n.t('lingua')}:</Text>

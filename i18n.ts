@@ -15,6 +15,7 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth disattivato!',
       disconnessioneRiuscita: 'Disconnessione riuscita!',
       warn: 'Attenzione, non sono riuscito a disconnetterti',
+      lingua: 'Lingua'
     },
   },
   en: {
@@ -30,6 +31,7 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth disabled!',
       disconnessioneRiuscita: 'Logout successful!',
       warn: 'Attention, I was unable to disconnect you',
+      lingua: 'Language'
     },
   },
   fr: {
@@ -45,6 +47,7 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth désactivé !',
       disconnessioneRiuscita: 'Déconnexion réussie !',
       warn: 'Attention, je n ai pas pu vous déconnecter',
+      lingua: 'Langue'
     },
   },
   de: {
@@ -60,6 +63,7 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth deaktiviert!',
       disconnessioneRiuscita: 'Abmeldung erfolgreich!',
       warn: 'Achtung, ich konnte die Verbindung nicht trennen',
+      lingua: 'Zunge'
     },
   },
 };

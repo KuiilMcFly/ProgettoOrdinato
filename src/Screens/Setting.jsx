@@ -19,7 +19,7 @@ function Setting({navigation, ...props}) {
         <Header title={'IMPOSTAZIONI'} navigation={navigation} />
       </View>
       <View style={SettingCSS.textBtn}>
-        <Text style={SettingCSS.lingua}>Lingua :</Text>
+        <Text style={SettingCSS.lingua}>{i18n.t('lingua')} :</Text>
 
         <View style={SettingCSS.materialButtonViolet3}>
           <TouchableOpacity

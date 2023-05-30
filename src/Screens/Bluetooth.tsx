@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
-
+import LinearGradient from 'react-native-linear-gradient';
 import {
   View,
   ScrollView,
@@ -242,7 +242,10 @@ function Bluetooth({navigation, ...props}) {
 
   //Visualizzazione
   return (
-    <View style={BluetoothCSS.container}>
+      <LinearGradient
+      colors={['#82c0d1', '#508796', '#d7d8db']}
+      style={BluetoothCSS.container}
+      >
       <Spinner
         visible={spinner}
         textContent={'Loading...'}
@@ -336,7 +339,7 @@ function Bluetooth({navigation, ...props}) {
                 <Button
                   title="Close"
                   onPress={() => stopBluetoothConnection(selectedDevice?.id)}
-                />
+                  />
               </View>
             </Modal>
 
@@ -365,7 +368,7 @@ function Bluetooth({navigation, ...props}) {
           <Footer navigation={navigation} />
         </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 }
 

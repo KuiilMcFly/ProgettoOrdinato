@@ -3,10 +3,10 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 export const Footer = ({navigation, ...props}) => {
   return (
-    <View style={[HomeFooterStyles, props.style]}>
+    <View style={props.style}>
       <LinearGradient
-        colors={['#3F51B5', '#078716', '#093203']}
-        style={{flex: 1}}>
+        colors={['#3F51B5', '#404c94', '#5a80a6']}
+        style={HomeFooterStyles.container}>
         <View style={HomeFooterStyles.group}>
           <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
             <Image

@@ -2,6 +2,8 @@ import {StyleSheet} from 'react-native';
 
 export const HomeFooterStyles = StyleSheet.create({
   container: {
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     backgroundColor: '#3f51b5',
     flexDirection: 'row',
     alignItems: 'center',
@@ -15,14 +17,12 @@ export const HomeFooterStyles = StyleSheet.create({
     elevation: 3,
   },
   group: {
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    
     width: '100%',
     height: 56,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#3F51B5',
   },
   image: {
     width: 30,

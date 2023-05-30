@@ -22,7 +22,6 @@ import i18n from '../../i18n';
 
 function Bluetooth({navigation, ...props}) {
   const [spinner, setSpinner] = useState(false);
-  const spinnerLoader = spinner;
   const [scannedDevices, setScannedDevices] = useState([]);
   const [scannedDeviceCount, setScannedDeviceCount] = useState(0);
   const [connectedDevice, setConnectedDevice] = useState(null);

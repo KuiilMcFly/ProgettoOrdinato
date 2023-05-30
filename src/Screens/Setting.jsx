@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import React, {Component, useState} from 'react';
+import {View, TouchableOpacity, Text, Alert} from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';
@@ -7,14 +8,25 @@ import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 import {useTranslation} from 'react-i18next';
 
 function Setting({navigation, ...props}) {
+  const [spinner, setSpinner] = useState(false);
   const {i18n} = useTranslation();
 
   const changeLanguageHandler = language => {
-    i18n.changeLanguage(language);
+    setSpinner(true);
+    i18n.changeLanguage(language).then((res)=>{
+      setSpinner(false);
+      Alert.alert(i18n.t('linguaCambiata'))
+    })
+    
 
   };
   return (
     <View style={SettingCSS.container}>
+      <Spinner
+        visible={spinner}
+        textContent={'Loading...'}
+        textStyle={{color: '#FFF'}}
+      />
       <View style={BluetoothCSS.header}>
         <Header title={'IMPOSTAZIONI'} navigation={navigation} />
       </View>

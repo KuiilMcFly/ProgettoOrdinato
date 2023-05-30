@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import {initReactI18next} from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 
 const resources = {
   it: {
@@ -15,7 +15,8 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth disattivato!',
       disconnessioneRiuscita: 'Disconnessione riuscita!',
       warn: 'Attenzione, non sono riuscito a disconnetterti',
-      lingua: 'Lingua'
+      lingua: 'Lingua',
+      linguaCambiata: 'Lingua cambiata!'
     },
   },
   en: {
@@ -31,7 +32,8 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth disabled!',
       disconnessioneRiuscita: 'Logout successful!',
       warn: 'Attention, I was unable to disconnect you',
-      lingua: 'Language'
+      lingua: 'Language',
+      linguaCambiata: 'Language changed!'
     },
   },
   fr: {
@@ -47,7 +49,8 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth désactivé !',
       disconnessioneRiuscita: 'Déconnexion réussie !',
       warn: 'Attention, je n ai pas pu vous déconnecter',
-      lingua: 'Langue'
+      lingua: 'Langue',
+      linguaCambiata: 'La langue a changé!'
     },
   },
   de: {
@@ -63,7 +66,8 @@ const resources = {
       bluetoothDisabilitato: 'Bluetooth deaktiviert!',
       disconnessioneRiuscita: 'Abmeldung erfolgreich!',
       warn: 'Achtung, ich konnte die Verbindung nicht trennen',
-      lingua: 'Zunge'
+      lingua: 'Zunge',
+      linguaCambiata: 'Sprache geändert!'
     },
   },
 };

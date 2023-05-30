@@ -13,6 +13,7 @@ import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FirstScreen from './src/Screens/FirstScreen';
 import LinearGradient from 'react-native-linear-gradient';
+import {useTranslation} from 'react-i18next';
 enableScreens();
 
 const Home = ({navigation, ...props}) => {
@@ -50,6 +51,8 @@ async function checkFirstLaunch() {
 }
 
 const App = ({navigation}) => {
+  const {i18n} = useTranslation();
+
   const [firstLaunch, setFirstLaunch] = useState(null);
   const [showFirstScreen, setShowFirstScreen] = useState(false);
 
@@ -72,6 +75,7 @@ const App = ({navigation}) => {
 
 
   return (
+  
     <NavigationContainer>
       {showFirstScreen ? (
         <FirstScreen onLanguageSelected={handleLanguageSelection} />

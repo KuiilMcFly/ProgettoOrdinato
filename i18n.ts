@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   it: {
     translation: {
+      sampleText: 'Ciao sono un testo',
       attiva: 'Attiva',
       scansione: 'Scansione',
       disattiva: 'Disattiva',
@@ -18,10 +19,12 @@ const resources = {
       lingua: 'Lingua',
       linguaCambiata: 'Lingua cambiata!',
       impostazioni: 'IMPOSTAZIONI',
+      bluetoothConnectionAlert: 'Questa sezione è accessibile solo dopo che sei connesso ad un device'
     },
   },
   en: {
     translation: {
+      sampleText: "hi i'm a text",
       attiva: 'Activate',
       scansione: 'Scan',
       disattiva: 'Deactivate',
@@ -36,10 +39,12 @@ const resources = {
       lingua: 'Language',
       linguaCambiata: 'Language changed!',
       impostazioni: 'SETTING',
+      bluetoothConnectionAlert: 'This section is accessible only after you are connected to a device'
     },
   },
   fr: {
     translation: {
+      sampleText: 'salut je suis un texto',
       attiva: 'Activer',
       scansione: 'Analyse',
       disattiva: 'Désactiver',
@@ -54,10 +59,12 @@ const resources = {
       lingua: 'Langue',
       linguaCambiata: 'La langue a changé!',
       impostazioni: 'PARAMÈTRE',
+      bluetoothConnectionAlert: "Cette section n'est accessible qu'après vous être connecté à un appareil"
     },
   },
   de: {
     translation: {
+      sampleText: 'Hallo, ich bin ein Text',
       attiva: 'Aktiv',
       scansione: 'Scan',
       disattiva: 'Deaktivieren',
@@ -72,6 +79,7 @@ const resources = {
       lingua: 'Zunge',
       linguaCambiata: 'Sprache geändert!',
       impostazioni: 'EINSTELLUNG',
+      bluetoothConnectionAlert: 'Auf diesen Abschnitt kann erst zugegriffen werden, nachdem Sie mit einem Gerät verbunden sind'
     },
   },
 };

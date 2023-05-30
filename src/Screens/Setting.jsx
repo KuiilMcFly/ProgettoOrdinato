@@ -16,6 +16,7 @@ function Setting({navigation, ...props}) {
     setSpinner(true);
     i18n.changeLanguage(language).then((res)=>{
       setSpinner(false);
+      
       Alert.alert(i18n.t('linguaCambiata'))
     })
     
@@ -33,7 +34,7 @@ function Setting({navigation, ...props}) {
         textStyle={{color: '#FFF'}}
       />
       <View style={BluetoothCSS.header}>
-        <Header title={i18n.t('impostazioni')} navigation={navigation} />
+        <Header title={'IMPOSTAZIONI'} navigation={navigation} />
       </View>
       <View style={SettingCSS.textBtn}>
         <Text style={SettingCSS.lingua}>{i18n.t('lingua')}:</Text>

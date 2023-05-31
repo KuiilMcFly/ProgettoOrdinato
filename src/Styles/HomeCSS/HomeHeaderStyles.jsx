@@ -35,4 +35,26 @@ export const HomeHeaderStyles = StyleSheet.create({
     width: 27,
     height: 24,
   },
+  
+  menuIcon: {
+    width: 20,
+    height: 20,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  hamburgerMenu: {
+    backgroundColor: '#FFFFFF',
+    padding: 10,
+    marginTop: 10,
+    position: 'absolute',
+    left: 10,
+    top: 40,
+    width: 200,
+  },
+  menuItem: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#000000',
+    marginVertical: 5,
+  },
 });

@@ -6,8 +6,9 @@ export const SettingCSS = StyleSheet.create({
     height: '100%',
   },
   textBtn: {
-    justifyContent: 'space-between',
+    flexGrow: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   lingua: {
     fontFamily: 'roboto-700',

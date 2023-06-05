@@ -1,7 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {Image, LogBox} from 'react-native';
-import {HamburgerModal} from '../Components/HamburgerModal';
 import {
   View,
   ScrollView,
@@ -11,8 +10,6 @@ import {
   Modal,
   Alert,
 } from 'react-native';
-import {Header} from '../Components/Header';
-import {Footer} from '../Components/Footer';
 import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
 import Spinner from 'react-native-loading-spinner-overlay';
@@ -23,7 +20,7 @@ import CustomConnectBt from '../Components/CustomConnectBt';
 import {useTranslation} from 'react-i18next';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 
-function Bluetooth({navigation, ...props}) {
+function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
   const {i18n} = useTranslation();
   const [spinner, setSpinner] = useState(false);
   const [scannedDevices, setScannedDevices] = useState([]);
@@ -239,18 +236,14 @@ function Bluetooth({navigation, ...props}) {
     }, true);
   }
 
-  function activeBluetooth() {
-    _bleManager.current.enable().then(state => {
-      Alert.alert(i18n.t('bluetoothAttivato'));
-    });
+  //verifica stato del bluetooth
+  function checkBluetooth() {
+    if (bluetoothConnection) {
+      navigation.navigate('Wifi');
+    } else {
+      Alert.alert(i18n.t('bluetoothConnectionAlert'));
+    }
   }
-
-  function stopBluetooth() {
-    _bleManager.current.disable().then(state => {
-      Alert.alert(i18n.t('bluetoothDisabilitato'));
-    });
-  }
-
   function stopBluetoothConnection(deviceId) {
     _bleManager.current.cancelDeviceConnection(deviceId).then(
       res => {
@@ -417,7 +410,7 @@ function Bluetooth({navigation, ...props}) {
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+          <TouchableOpacity onPress={() => checkBluetooth()}>
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>

@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import {HomeStyles} from './src/Styles/HomeCSS/HomeStyle';
-import {Header} from './src/Components/Header';
-import {Footer} from './src/Components/Footer';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Bluetooth from './src/Screens/Bluetooth';
@@ -16,15 +15,27 @@ import LinearGradient from 'react-native-linear-gradient';
 import About from './src/Screens/About';
 import {useTranslation} from 'react-i18next';
 import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
+import i18n from './i18n';
 
 enableScreens();
 
-const Home = ({navigation, ...props}) => {
+const Home = ({navigation, bluetoothConnection = false, ...props}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  //verifica stato del bluetooth
+  function checkBluetooth(){
+    if(bluetoothConnection){
+      navigation.navigate('Wifi')
+    }
+    else{
+      Alert.alert(i18n.t("bluetoothConnectionAlert"))
+    }
+
+  }
   return (
     <View>
       <LinearGradient
@@ -81,7 +92,7 @@ const Home = ({navigation, ...props}) => {
             <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
               <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+            <TouchableOpacity onPress={() => checkBluetooth()}>
               <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Setting')}>

@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import LinearGradient from 'react-native-linear-gradient';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 
-function Setting({navigation, ...props}) {
+function Setting({navigation, bluetoothConnection = false, ...props}) {
   const [spinner, setSpinner] = useState(false);
   const {i18n} = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +14,16 @@ function Setting({navigation, ...props}) {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  //verifica stato del bluetooth
+  function checkBluetooth(){
+    if(bluetoothConnection){
+      navigation.navigate('Wifi')
+    }
+    else{
+      Alert.alert(i18n.t("bluetoothConnectionAlert"))
+    }
+
+  }
 
   //cambia la lingua globale dell'applicazione
   const changeLanguageHandler = language => {
@@ -132,7 +142,7 @@ function Setting({navigation, ...props}) {
             <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
               <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+            <TouchableOpacity onPress={() => checkBluetooth()}>
               <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>

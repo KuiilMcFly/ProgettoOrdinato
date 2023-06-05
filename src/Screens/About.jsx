@@ -4,12 +4,23 @@ import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import LinearGradient from 'react-native-linear-gradient';
 
-const About = ({navigation}) => {
+const About = ({navigation, bluetoothConnection = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+   //verifica stato del bluetooth
+   function checkBluetooth(){
+    if(bluetoothConnection){
+      navigation.navigate('Wifi')
+    }
+    else{
+      Alert.alert(i18n.t("bluetoothConnectionAlert"))
+    }
+
+  }
   return (
     <LinearGradient
       colors={['#82c0d1', '#508796', '#d7d8db']}
@@ -77,7 +88,7 @@ const About = ({navigation}) => {
           <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
             <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+          <TouchableOpacity onPress={() => checkBluetooth()}>
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>

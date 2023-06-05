@@ -2,6 +2,7 @@ import {HomeFooterStyles} from '../Styles/HomeCSS/HomeFooterStyles';
 import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTranslation} from 'react-i18next';
+
 export const Footer = ({navigation, bluetoothConnection = false, ...props}) => {
   const {i18n} = useTranslation();
 

@@ -72,7 +72,12 @@ const Home = ({navigation, ...props}) => {
                   style={HomeHeaderStyles.menuIcon}
                 />
               </TouchableOpacity>
-            )}
+            )}<View style={{width: '100%', height: '35%', marginLeft: '0%'}}>
+            <Image
+              source={require('./src/assets/ble.png')}
+              style={{width: '100%', height: '100%'}}
+            />
+          </View>
             <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
               <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
             </TouchableOpacity>

@@ -10,14 +10,6 @@ export const BluetoothCSS = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  header: {
-    width: '100%',
-  },
-  headerBluetooth: {
-    height: 56,
-    width: 360,
-  },
-
   btn: {
     flex: 1,
     justifyContent: 'space-around',
@@ -25,13 +17,11 @@ export const BluetoothCSS = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
   },
-
   scan: {
     height: 55,
     width: 121,
     borderRadius: 15,
   },
-
   scrollView: {
     width: '100%',
     height: '60%',
@@ -50,22 +40,11 @@ export const BluetoothCSS = StyleSheet.create({
     padding: 10,
     gap: 10,
   },
-
-  footer: {
-    width: '100%',
-    height: 56,
-  },
-  footerBluetooth: {
-    height: 56,
-    width: 361,
-  },
-
   scan: {
     color: '#fff',
     fontSize: 14,
     textAlign: 'center',
   },
-
   container2: {
     height: 70,
     width: 150,

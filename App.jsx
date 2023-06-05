@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import {HomeStyles} from './src/Styles/HomeCSS/HomeStyle';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Bluetooth from './src/Screens/Bluetooth';

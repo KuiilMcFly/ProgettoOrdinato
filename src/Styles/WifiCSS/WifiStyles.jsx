@@ -10,11 +10,7 @@ export const WifiStyles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '100%',
-  },
-  header: {
-    width: '100%',
-    height: 56,
-  },
+  }, 
   headerWifi: {
     height: 56,
     width: 360,
@@ -44,13 +40,5 @@ export const WifiStyles = StyleSheet.create({
     width: '100%',
     padding: 10,
     gap: 10,
-  },
-  footer: {
-    width: '100%',
-    height: 56,
-  },
-  footerWifi: {
-    height: 56,
-    width: 360,
   },
 });

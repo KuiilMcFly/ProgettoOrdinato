@@ -30,13 +30,13 @@ export const HomeHeaderStyles = StyleSheet.create({
     color: 'rgba(255,255,255,1)',
     height: 16,
     width: '90%',
-    alignItems: "center",
+    alignItems: 'center',
   },
   image: {
     width: 27,
     height: 24,
   },
-  
+
   menuIcon: {
     width: 20,
     height: 20,
@@ -45,19 +45,26 @@ export const HomeHeaderStyles = StyleSheet.create({
   },
   hamburgerMenu: {
     backgroundColor: '#FFFFFF',
-    padding: 10,
+
     marginTop: 10,
     position: 'absolute',
     left: 10,
     top: 40,
-    width: 390,
-    height: 600,
+    width: '95%',
+    height: '92%',
     borderRadius: 15,
+
+    gap: 30,
   },
   menuItem: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#000000',
-    marginVertical: 5,
+
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: 10,
+    minWidth: '100%',
+    borderRadius: 15,
   },
 });

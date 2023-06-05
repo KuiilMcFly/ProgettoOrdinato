@@ -20,7 +20,7 @@ export const HomeHeaderStyles = StyleSheet.create({
   },
   group: {
     width: '100%',
-    height: 56,
+    height: '7%',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

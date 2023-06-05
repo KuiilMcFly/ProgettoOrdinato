@@ -1,6 +1,4 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 
 const About = () => {
   return (

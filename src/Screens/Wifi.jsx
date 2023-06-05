@@ -233,8 +233,8 @@ function Wifi(props) {
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
               <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
-              <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
+              <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
               <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>

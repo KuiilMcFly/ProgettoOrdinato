@@ -57,7 +57,7 @@ function Setting({navigation, bluetoothConnection = false, ...props}) {
             />
           </TouchableOpacity>
         )}
-        <Text style={HomeHeaderStyles.home}>ABOUT US</Text>
+        <Text style={HomeHeaderStyles.home}>SETTING</Text>
       </View>
 
       <Spinner

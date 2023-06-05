@@ -40,20 +40,20 @@ export const Header = ({ navigation, ...props }) => {
             />
           </TouchableOpacity>
         </View>
-        {isMenuOpen && (
-          <View style={HomeHeaderStyles.hamburgerMenu}>
-            <TouchableOpacity onPress={() => navigation.navigate('Menu1')}>
-              <Text style={HomeHeaderStyles.menuItem}>Menu Item 1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Menu2')}>
-              <Text style={HomeHeaderStyles.menuItem}>Menu Item 2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Menu3')}>
-              <Text style={HomeHeaderStyles.menuItem}>Menu Item 3</Text>
-            </TouchableOpacity>
-          </View>
-        )}
       </LinearGradient>
+      {isMenuOpen && (
+        <View style={HomeHeaderStyles.hamburgerMenu}>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu1')}>
+            <Text style={HomeHeaderStyles.menuItem}>Home</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu2')}>
+            <Text style={HomeHeaderStyles.menuItem}>Setting</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu3')}>
+            <Text style={HomeHeaderStyles.menuItem}>About us</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };

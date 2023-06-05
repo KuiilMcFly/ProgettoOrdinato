@@ -30,6 +30,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     color: 'rgba(255,255,255,1)',
     height: 16,
     width: '90%',
+    alignItems: "center",
   },
   image: {
     width: 27,
@@ -49,7 +50,8 @@ export const HomeHeaderStyles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     top: 40,
-    width: 200,
+    width: 300,
+    height: 500,
   },
   menuItem: {
     fontSize: 16,

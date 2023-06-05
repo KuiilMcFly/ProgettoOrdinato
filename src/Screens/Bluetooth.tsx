@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {LogBox} from 'react-native';
+import {Image, LogBox} from 'react-native';
 import {
   View,
   ScrollView,
@@ -20,6 +20,7 @@ import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 import Base64 from '../../Base64';
 import CustomConnectBt from '../Components/CustomConnectBt';
 import {useTranslation} from 'react-i18next';
+import { HomeHeaderStyles } from '../Styles/HomeCSS/HomeHeaderStyles';
 
 function Bluetooth({navigation, ...props}) {
   const {i18n} = useTranslation();
@@ -30,6 +31,7 @@ function Bluetooth({navigation, ...props}) {
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [characteristicUUID, setCharacteristicUUID] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   LogBox.ignoreLogs(['new NativeEventEmitter']);
 
   const [isDisconnectedModalVisible, setIsDisconnectedModalVisible] =
@@ -260,11 +262,35 @@ function Bluetooth({navigation, ...props}) {
     );
   }
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   //Visualizzazione
   return (
     <LinearGradient
       colors={['#82c0d1', '#508796', '#d7d8db']}
       style={BluetoothCSS.container}>
+        <View style={HomeHeaderStyles.group}>
+          {isMenuOpen ? (
+            <TouchableOpacity onPress={toggleMenu}>
+              <Image
+                source={require('../assets/HomeImg/close.png')}
+                resizeMode="contain"
+                style={HomeHeaderStyles.menuIcon}
+              />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={toggleMenu}>
+              <Image
+                source={require('../assets/HomeImg/menu.png')}
+                resizeMode="contain"
+                style={HomeHeaderStyles.menuIcon}
+              />
+            </TouchableOpacity>
+          )}
+          <Text style={HomeHeaderStyles.home}>BLUETOOTH</Text>
+          </View>
       <Spinner
         visible={spinner}
         textContent={'Loading...'}
@@ -272,7 +298,6 @@ function Bluetooth({navigation, ...props}) {
       />
       <View style={BluetoothCSS.bluetoothSchermo}>
         <View style={BluetoothCSS.header}>
-          <Header navigation={navigation} title={'BLUETOOTH'} />
         </View>
         <View style={BluetoothCSS.btn}>
           <View style={BluetoothCSS.btnAttivaRow}>
@@ -389,7 +414,19 @@ function Bluetooth({navigation, ...props}) {
             bluetoothConnection={connectedDevice}
           />
         </View>
-      </View>
+      </View>{isMenuOpen && (
+        <View style={HomeHeaderStyles.hamburgerMenu}>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu1')}>
+            <Text style={HomeHeaderStyles.menuItem}>Home</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu2')}>
+            <Text style={HomeHeaderStyles.menuItem}>Setting</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu3')}>
+            <Text style={HomeHeaderStyles.menuItem}>About us</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </LinearGradient>
   );
 }

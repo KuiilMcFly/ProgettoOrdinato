@@ -416,10 +416,10 @@ function Bluetooth({navigation, ...props}) {
         </View>
       </View>{isMenuOpen && (
         <View style={HomeHeaderStyles.hamburgerMenu}>
-          <TouchableOpacity onPress={() => navigation.navigate('Menu1')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Text style={HomeHeaderStyles.menuItem}>Home</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Menu2')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
             <Text style={HomeHeaderStyles.menuItem}>Setting</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Menu3')}>

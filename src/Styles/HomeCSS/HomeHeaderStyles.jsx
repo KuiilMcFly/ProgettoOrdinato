@@ -50,8 +50,9 @@ export const HomeHeaderStyles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     top: 40,
-    width: 300,
-    height: 500,
+    width: 390,
+    height: 600,
+    borderRadius: 15,
   },
   menuItem: {
     fontSize: 16,

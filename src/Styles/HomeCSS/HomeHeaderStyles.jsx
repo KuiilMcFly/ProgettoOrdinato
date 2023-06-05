@@ -22,7 +22,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     width: '100%',
     height: '7%',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#3F51B5',
   },
@@ -48,15 +48,13 @@ export const HomeHeaderStyles = StyleSheet.create({
     width: 20,
     height: 20,
     marginLeft: '85%',
-
     tintColor: '#3F51B5',
     marginTop: 10,
   },
   hamburgerMenu: {
     backgroundColor: '#FFFFFF',
-
     position: 'absolute',
-    width: '50%',
+    width: '60%',
     height: '100%',
     borderRightWidth: 3,
     borderColor: 'white',

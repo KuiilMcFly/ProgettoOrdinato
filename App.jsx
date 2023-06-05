@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {HomeStyles} from './src/Styles/HomeCSS/HomeStyle';
 import {Header} from './src/Components/Header';
 import {Footer} from './src/Components/Footer';
@@ -13,24 +13,79 @@ import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FirstScreen from './src/Screens/FirstScreen';
 import LinearGradient from 'react-native-linear-gradient';
-import About from './src/Screens/About';
 
 import {useTranslation} from 'react-i18next';
 
 enableScreens();
 
 const Home = ({navigation, ...props}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <View>
       <LinearGradient
         colors={['#82c0d1', '#508796', '#d7d8db']}
         style={HomeStyles.container}>
-        <View style={HomeStyles.header}>
-          <Header navigation={navigation} title={'HOME'} />
+        <View style={HomeStyles.containerHome}>
+          <View style={HomeHeaderStyles.group}>
+            {isMenuOpen ? (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('./src/assets/HomeImg/close.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('./src/assets/HomeImg/menu.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            )}
+            <Text style={HomeHeaderStyles.home}>HOME</Text>
+          </View>
         </View>
-        <View style={HomeStyles.footer}>
-          <Footer navigation={navigation} />
-        </View>
+        {isMenuOpen && (
+          <LinearGradient
+            style={HomeHeaderStyles.hamburgerMenu}
+            colors={['#82c0d1', '#508796', '#d7d8db']}>
+            {isMenuOpen ? (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('./src/assets/HomeImg/close.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon2}
+                />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('./src/assets/HomeImg/menu.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+              <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+              <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
+              <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
+              <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+        )}
       </LinearGradient>
     </View>
   );

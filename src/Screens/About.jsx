@@ -1,9 +1,16 @@
 import React from 'react';
+import {Text, View} from 'react-native';
+import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 
 const About = () => {
   return (
-    <View>
-      <Text>Ciao</Text>
+    <View style={AboutStyle.AboutContainer}>
+      <Text style={AboutStyle.text}>Informazioni sulla versione</Text>
+      <View style={AboutStyle.VersionContainer}>
+        <Text style={AboutStyle.text1}>Versione: </Text>
+        <Text style={AboutStyle.text1}>Versione: </Text>
+        <Text style={AboutStyle.text1}>Versione: </Text>
+      </View>
     </View>
   );
 };

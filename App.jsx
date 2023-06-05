@@ -15,6 +15,7 @@ import FirstScreen from './src/Screens/FirstScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import About from './src/Screens/About';
 import {useTranslation} from 'react-i18next';
+import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
 
 enableScreens();
 

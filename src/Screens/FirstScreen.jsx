@@ -10,16 +10,16 @@ import LoadingImage from '../assets/Bluetooth.png';
 
 function FirstScreen({ onLanguageSelected, ...props }) {
   const { i18n } = useTranslation();
-  const [loading, setLoading] = useState(false); // Imposta lo stato di caricamento su false all'inizio
+  const [loading, setLoading] = useState(false); 
 
   const changeLanguageHandler = language => {
-    setLoading(true); // Imposta lo stato di caricamento su true immediatamente
+    setLoading(true); 
 
     i18n.changeLanguage(language);
     setTimeout(() => {
-      setLoading(false); // Imposta lo stato di caricamento su false dopo 5 secondi
+      setLoading(false); 
       onLanguageSelected();
-    }, 2000); // Ritardo di 5 secondi (5000 millisecondi)
+    }, 2000); 
   };
 
   const navigation = useNavigation();

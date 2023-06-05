@@ -8,11 +8,8 @@ import {
   Alert,
   TextInput,
   TouchableOpacity,
-  ScrollView,
   Image,
 } from 'react-native';
-import {Header} from '../Components/Header';
-import {Footer} from '../Components/Footer';
 import {WifiScanStyle} from '../Styles/WifiCSS/WifiScanCSS';
 import {WifiStyles} from '../Styles/WifiCSS/WifiStyles';
 import {PERMISSIONS, request, RESULTS} from 'react-native-permissions';

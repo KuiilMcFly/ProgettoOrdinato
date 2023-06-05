@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, Text, Alert, Image} from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import {SettingCSS} from '../Styles/SettingCSS/SettingCSS';

@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 const About = () => {
   return (
     <View style={AboutStyle.AboutContainer}>

@@ -438,13 +438,16 @@ function Bluetooth({navigation, ...props}) {
             </TouchableOpacity>
           )}
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-            <Text style={HomeHeaderStyles.menuItem}>Home</Text>
+            <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+            <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
-            <Text style={HomeHeaderStyles.menuItem}>Setting</Text>
+            <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Menu3')}>
-            <Text style={HomeHeaderStyles.menuItem}>About us</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
+            <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
           </TouchableOpacity>
         </LinearGradient>
       )}

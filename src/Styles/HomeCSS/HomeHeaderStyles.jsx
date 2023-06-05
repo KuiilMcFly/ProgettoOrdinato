@@ -60,7 +60,6 @@ export const HomeHeaderStyles = StyleSheet.create({
     height: '100%',
     borderRightWidth: 3,
     borderColor: 'white',
-
     gap: 10,
   },
   menuItem: {

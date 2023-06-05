@@ -13,6 +13,7 @@ import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FirstScreen from './src/Screens/FirstScreen';
 import LinearGradient from 'react-native-linear-gradient';
+import About from './src/Screens/About';
 
 import {useTranslation} from 'react-i18next';
 
@@ -86,6 +87,7 @@ const App = ({navigation}) => {
           <Stack.Screen name="Bluetooth" component={Bluetooth} />
           <Stack.Screen name="Wifi" component={Wifi} />
           <Stack.Screen name="Setting" component={Setting} />
+          <Stack.Screen name="AboutUs" component={About} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

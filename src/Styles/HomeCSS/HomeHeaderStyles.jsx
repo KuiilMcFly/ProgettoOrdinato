@@ -24,6 +24,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#3F51B5',
   },
   home: {
     fontFamily: 'roboto-700',
@@ -43,28 +44,32 @@ export const HomeHeaderStyles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
   },
+  menuIcon2: {
+    width: 20,
+    height: 20,
+    marginLeft: '85%',
+
+    tintColor: '#3F51B5',
+    marginTop: 10,
+  },
   hamburgerMenu: {
     backgroundColor: '#FFFFFF',
 
-    marginTop: 10,
     position: 'absolute',
-    left: 10,
-    top: 40,
-    width: '95%',
-    height: '92%',
-    borderRadius: 15,
+    width: '50%',
+    height: '100%',
+    borderRightWidth: 3,
+    borderColor: 'white',
 
-    gap: 30,
+    gap: 10,
   },
   menuItem: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#000000',
-
-    backgroundColor: 'blue',
+    backgroundColor: '#3F51B5',
     color: 'white',
     padding: 10,
     minWidth: '100%',
-    borderRadius: 15,
   },
 });

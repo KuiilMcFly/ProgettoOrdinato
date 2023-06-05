@@ -431,10 +431,12 @@ function Bluetooth({navigation, ...props}) {
               />
             </TouchableOpacity>
           )}
-          <View style = {{width : '100%', height: '35%', marginLeft: '0%'}}>
-          <Image
+          <View style={{width: '100%', height: '35%', marginLeft: '0%'}}>
+            <Image
               source={require('../assets/ble.png')}
-              style = {{width : '100%', height: '100%'}}/></View>
+              style={{width: '100%', height: '100%'}}
+            />
+          </View>
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
           </TouchableOpacity>

@@ -18,7 +18,7 @@ export const AboutStyle = StyleSheet.create({
     color: 'white',
   },
   VersionContainer: {
-    backgroundColor: 'blue',
+    backgroundColor: '#3F51B5',
     borderRadius: 15,
     padding: 10,
     width: '50%',

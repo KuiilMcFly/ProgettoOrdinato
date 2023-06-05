@@ -17,24 +17,16 @@ export const BluetoothCSS = StyleSheet.create({
     height: 56,
     width: 360,
   },
+
   btn: {
     flex: 1,
     justifyContent: 'space-around',
-    alignSelf: 'center',
     alignItems: 'center',
     width: '100%',
-    height: '100%',
-    paddingTop: 10,
     flexDirection: 'row',
   },
 
   scan: {
-    height: 55,
-    width: 121,
-    borderRadius: 15,
-  },
-
-  stopScan: {
     height: 55,
     width: 121,
     borderRadius: 15,
@@ -58,6 +50,7 @@ export const BluetoothCSS = StyleSheet.create({
     padding: 10,
     gap: 10,
   },
+
   footer: {
     width: '100%',
     height: 56,

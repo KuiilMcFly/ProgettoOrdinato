@@ -299,44 +299,7 @@ function Bluetooth({navigation, ...props}) {
       />
       <View style={BluetoothCSS.bluetoothSchermo}>
         <View style={BluetoothCSS.header}></View>
-        <View style={BluetoothCSS.btn}>
-          <View style={BluetoothCSS.btnAttivaRow}>
-            <View style={BluetoothCSS.btnAttiva1}>
-              <TouchableOpacity
-                style={[BluetoothCSS.container4, props.style]}
-                onPress={() => activeBluetooth()}>
-                <Text style={BluetoothCSS.attiva}>{i18n.t('attiva')}</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={BluetoothCSS.scan1}>
-              <TouchableOpacity
-                style={[BluetoothCSS.container2, props.style]}
-                onPress={() => deviceScan()}>
-                <Text style={BluetoothCSS.scan}>{i18n.t('scansione')}</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={BluetoothCSS.btnDisattivaRow}>
-            <View style={BluetoothCSS.btnDisattiva1}>
-              <TouchableOpacity
-                style={[BluetoothCSS.container3, props.style]}
-                onPress={() => stopBluetooth()}>
-                <Text style={BluetoothCSS.disattiva}>
-                  {i18n.t('disattiva')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={BluetoothCSS.stopScan1}>
-              <TouchableOpacity
-                style={[BluetoothCSS.container1, props.style]}
-                onPress={() => deviceStopScan()}>
-                <Text style={BluetoothCSS.stopScan}>
-                  {i18n.t('fermaScansione')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
+
         <View style={BluetoothCSS.scrollView}>
           <View style={BluetoothCSS.scrollArea}>
             <ScrollView
@@ -407,6 +370,20 @@ function Bluetooth({navigation, ...props}) {
               </View>
             </Modal>
           </View>
+        </View>
+
+        <View style={BluetoothCSS.btn}>
+          <TouchableOpacity
+            style={[BluetoothCSS.container2, props.style]}
+            onPress={() => deviceScan()}>
+            <Text style={BluetoothCSS.scan}>{i18n.t('scansione')}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[BluetoothCSS.container2, props.style]}
+            onPress={() => deviceStopScan()}>
+            <Text style={BluetoothCSS.scan}>{i18n.t('fermaScansione')}</Text>
+          </TouchableOpacity>
         </View>
       </View>
 

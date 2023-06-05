@@ -9,6 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Image,
 } from 'react-native';
 import {Header} from '../Components/Header';
 import {Footer} from '../Components/Footer';
@@ -21,6 +22,7 @@ import {FlatList} from 'react-native';
 import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
 import CustomConnectBt from '../Components/CustomConnectBt';
 import i18n from '../../i18n';
+import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 
 function Wifi(props) {
   const [passwordWifi, setPasswordWifi] = useState('');
@@ -30,6 +32,7 @@ function Wifi(props) {
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [characteristicUUID, setCharacteristicUUID] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isDisconnectedModalVisible, setIsDisconnectedModalVisible] =
     useState(false);
@@ -126,65 +129,122 @@ function Wifi(props) {
     />
   );
 
-  return (
-    <View>
-      <LinearGradient
-      colors={['#82c0d1', '#508796', '#d7d8db']}
-      style={WifiStyles.container}
-      >
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-      <View style={WifiStyles.header}>
-        <Header title={'WI-FI'} navigation={navigation} />
-      </View>
-      <View style={WifiStyles.btn}>
-        <View style={WifiStyles.btnScan}>
-          <TouchableOpacity
-            onPress={deviceScan}
-            style={[WifiScanStyle.container]}>
-            <Text style={WifiScanStyle.scan}>{i18n.t('scansione')}</Text>
-          </TouchableOpacity>
+  return (
+      <LinearGradient
+        colors={['#82c0d1', '#508796', '#d7d8db']}
+        style={WifiStyles.container}>
+        <View style={WifiStyles.containerBtn}>
+          <View style={HomeHeaderStyles.group}>
+            {isMenuOpen ? (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('../assets/HomeImg/close.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('../assets/HomeImg/menu.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            )}
+            <Text style={HomeHeaderStyles.home}>WIFI</Text>
+          </View>
+
+          <View style={WifiStyles.btn}>
+            <View style={WifiStyles.btnScan}>
+              <TouchableOpacity
+                onPress={deviceScan}
+                style={[WifiScanStyle.container]}>
+                <Text style={WifiScanStyle.scan}>{i18n.t('scansione')}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={WifiStyles.scrollView}>
+            <View style={WifiStyles.scrollArea}>
+              <FlatList
+                contentContainerStyle={
+                  WifiStyles.scrollArea_contentContainerStyle
+                }
+                data={scannedWifi}
+                renderItem={renderItem}
+                keyExtractor={item => item.SSID}
+              />
+            </View>
+          </View>
+
+          <Modal visible={!!connectedDevice} animationType="slide">
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 10,
+              }}>
+              <Text style={ModalStyles.deviceData}>
+                {connectedDevice?.SSID || ''}
+              </Text>
+              <TextInput
+                placeholder="password"
+                style={ModalStyles.deviceData}
+                onChangeText={text => setPasswordWifi(text)}
+              />
+              <Button
+                title="Connetti"
+                onPress={() => {
+                  connect(connectedDevice.SSID);
+                }}
+              />
+              <Button title="Close" onPress={() => stopConnection()} />
+            </View>
+          </Modal>
         </View>
-      </View>
-      <View style={WifiStyles.scrollView}>
-        <View style={WifiStyles.scrollArea}>
-          <FlatList
-            contentContainerStyle={WifiStyles.scrollArea_contentContainerStyle}
-            data={scannedWifi}
-            renderItem={renderItem}
-            keyExtractor={item => item.SSID}
-          />
-        </View>
-      </View>
-      <Modal visible={!!connectedDevice} animationType="slide">
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: 10,
-          }}>
-          <Text style={ModalStyles.deviceData}>
-            {connectedDevice?.SSID || ''}
-          </Text>
-          <TextInput
-            placeholder="password"
-            style={ModalStyles.deviceData}
-            onChangeText={text => setPasswordWifi(text)}
-          />
-          <Button
-            title="Connetti"
-            onPress={() => {
-              connect(connectedDevice.SSID);
-            }}
-          />
-          <Button title="Close" onPress={() => stopConnection()} />
-        </View>
-      </Modal>
-      <View style={WifiStyles.footer}>
-        <Footer navigation={navigation} />
-      </View>
-              </LinearGradient>
-    </View>
+
+        {isMenuOpen && (
+          <LinearGradient
+            style={HomeHeaderStyles.hamburgerMenu}
+            colors={['#82c0d1', '#508796', '#d7d8db']}>
+            {isMenuOpen ? (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('../assets/HomeImg/close.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon2}
+                />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={toggleMenu}>
+                <Image
+                  source={require('../assets/HomeImg/menu.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            )}
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+              <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
+              <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
+              <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
+              <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+        )}
+      </LinearGradient>
   );
 }
 

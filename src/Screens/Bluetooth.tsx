@@ -408,12 +408,6 @@ function Bluetooth({navigation, ...props}) {
             </Modal>
           </View>
         </View>
-        <View style={BluetoothCSS.footer}>
-          <Footer
-            navigation={navigation}
-            bluetoothConnection={connectedDevice}
-          />
-        </View>
       </View>
 
       {isMenuOpen && (

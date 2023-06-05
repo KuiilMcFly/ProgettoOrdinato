@@ -2,6 +2,10 @@ import {StyleSheet} from 'react-native';
 
 export const WifiStyles = StyleSheet.create({
   container: {
+    width: '100%',
+    height: '100%',
+  },
+  containerBtn: {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',

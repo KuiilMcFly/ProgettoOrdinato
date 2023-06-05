@@ -65,6 +65,7 @@ export const BluetoothCSS = StyleSheet.create({
   scrollView: {
     width: '100%',
     height: '60%',
+    marginBottom: '20%',
   },
   scrollArea: {
     borderRadius: 15,
@@ -73,11 +74,13 @@ export const BluetoothCSS = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     backgroundColor: 'rgba(230, 230, 230,1)',
+
   },
   scrollArea_contentContainerStyle: {
     width: '100%',
     padding: 10,
     gap: 10,
+
   },
   footer: {
     width: '100%',

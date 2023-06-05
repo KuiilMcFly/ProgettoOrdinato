@@ -31,6 +31,7 @@ export const WifiStyles = StyleSheet.create({
   scrollView: {
     width: '100%',
     height: '60%',
+    marginBottom: '10%',
   },
   scrollArea: {
     width: '90%',

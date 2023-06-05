@@ -2,27 +2,17 @@ import {StyleSheet} from 'react-native';
 
 export const SettingCSS = StyleSheet.create({
   container: {
-    justifyContent: 'space-between',
-    alignItems: 'center',
     width: '100%',
     height: '100%',
   },
-  header: {
-    width: '100%',
-    height: 56,
-  },
-  headerSetting: {
-    height: 56,
-    width: 360,
-  },
   textBtn: {
-    width: 123,
-    height: 310,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   lingua: {
     fontFamily: 'roboto-700',
     color: '#121212',
-    height: 24,
+    height: 20,
     width: '100%',
     fontSize: 15,
     textAlign: 'center',
@@ -50,14 +40,6 @@ export const SettingCSS = StyleSheet.create({
     width: 120,
     borderRadius: 15,
     marginTop: 22,
-  },
-  footer: {
-    width: '100%',
-    height: 56,
-  },
-  footerSetting: {
-    height: 56,
-    width: 360,
   },
   container1: {
     height: '100%',

@@ -13,6 +13,8 @@ import {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FirstScreen from './src/Screens/FirstScreen';
 import LinearGradient from 'react-native-linear-gradient';
+import About from './src/Screens/About';
+import { HomeHeaderStyles } from './src/Styles/HomeCSS/HomeHeaderStyles';
 
 import {useTranslation} from 'react-i18next';
 
@@ -72,8 +74,8 @@ const Home = ({navigation, ...props}) => {
                 />
               </TouchableOpacity>
             )}
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-              <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
+              <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Wifi')}>
               <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>

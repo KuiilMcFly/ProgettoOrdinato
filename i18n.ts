@@ -7,7 +7,7 @@ const resources = {
       sampleText: 'Ciao sono un testo',
       scansione: 'Scansione',
       fermaScansione: 'Ferma Scansione',
-      ùbluetoothNonAttivo: 'Bluetooth non attivo',
+      bluetoothNonAttivo: 'Bluetooth non attivo',
       bluetoothNonAttivoMessage:
         'Per effettuare la scansione dei dispositivi, attiva il Bluetooth.',
       bluetoothAttivato: 'Bluetooth attivato!',

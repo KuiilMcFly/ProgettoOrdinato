@@ -5,9 +5,7 @@ const resources = {
   it: {
     translation: {
       sampleText: 'Ciao sono un testo',
-      attiva: 'Attiva',
       scansione: 'Scansione',
-      disattiva: 'Disattiva',
       fermaScansione: 'Ferma Scansione',
       ùbluetoothNonAttivo: 'Bluetooth non attivo',
       bluetoothNonAttivoMessage:
@@ -25,9 +23,7 @@ const resources = {
   en: {
     translation: {
       sampleText: "hi i'm a text",
-      attiva: 'Activate',
       scansione: 'Scan',
-      disattiva: 'Deactivate',
       fermaScansione: 'Stop Scan',
       bluetoothNonAttivo: 'Bluetooth is not active',
       bluetoothNonAttivoMessage:
@@ -45,9 +41,7 @@ const resources = {
   fr: {
     translation: {
       sampleText: 'salut je suis un texto',
-      attiva: 'Activer',
       scansione: 'Analyse',
-      disattiva: 'Désactiver',
       fermaScansione: 'Arrêter la numérisation',
       bluetoothNonAttivo: 'Bluetooth non actif',
       bluetoothNonAttivoMessage:
@@ -65,9 +59,7 @@ const resources = {
   de: {
     translation: {
       sampleText: 'Hallo, ich bin ein Text',
-      attiva: 'Aktiv',
       scansione: 'Scan',
-      disattiva: 'Deaktivieren',
       fermaScansione: 'Stoppen Sie den Scanvorgang',
       bluetoothNonAttivo: 'Bluetooth ist nicht aktiv',
       bluetoothNonAttivoMessage:

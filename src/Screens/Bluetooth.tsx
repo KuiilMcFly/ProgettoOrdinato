@@ -30,6 +30,7 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
   const [batteryLevel, setBatteryLevel] = useState(null);
   const [characteristicUUID, setCharacteristicUUID] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   LogBox.ignoreLogs(['new NativeEventEmitter']);
 
   const [isDisconnectedModalVisible, setIsDisconnectedModalVisible] =
@@ -258,6 +259,7 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsMenuVisible(!isMenuVisible);
   };
 
   //Visualizzazione

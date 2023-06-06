@@ -20,9 +20,11 @@ enableScreens();
 
 const Home = ({navigation, bluetoothConnection = false, ...props}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsMenuVisible(!isMenuVisible);
   };
 
   //verifica stato del bluetooth

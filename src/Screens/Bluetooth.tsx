@@ -420,8 +420,11 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
             <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Help')}>
+          <TouchableOpacity>
               <Text style={HomeHeaderStyles.menuItem}>HELP</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={HomeHeaderStyles.menuItem}>CONTACT US</Text>
             </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
             <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>

@@ -15,6 +15,7 @@ import About from './src/Screens/About';
 import {useTranslation} from 'react-i18next';
 import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
 import Help from './src/Screens/Help';
+import Contact from './src/Screens/Contact';
 import i18n from './i18n';
 
 enableScreens();
@@ -102,8 +103,11 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
             <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
               <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Help')}>
+            <TouchableOpacity>
               <Text style={HomeHeaderStyles.menuItem}>HELP</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={HomeHeaderStyles.menuItem}>CONTACT US</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
               <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
@@ -167,6 +171,7 @@ const App = ({navigation}) => {
           <Stack.Screen name="Wifi" component={Wifi} />
           <Stack.Screen name="Setting" component={Setting} />
           <Stack.Screen name="Help" component={Help} />
+          <Stack.Screen name="ContactUs" component={Contact} />
           <Stack.Screen name="AboutUs" component={About} />
         </Stack.Navigator>
       )}

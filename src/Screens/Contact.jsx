@@ -46,7 +46,7 @@ const Contact = ({navigation, bluetoothConnection = false}) => {
             />
           </TouchableOpacity>
         )}
-        <Text style={HomeHeaderStyles.home}>HELP</Text>
+        <Text style={HomeHeaderStyles.home}>{i18n.t('contact')}</Text>
       </View>
 
       {isMenuVisible && (

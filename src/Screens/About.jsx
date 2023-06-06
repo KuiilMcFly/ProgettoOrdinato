@@ -45,15 +45,15 @@ const About = ({navigation, bluetoothConnection = false}) => {
             />
           </TouchableOpacity>
         )}
-        <Text style={HomeHeaderStyles.home}>ABOUT US</Text>
+        <Text style={HomeHeaderStyles.home}>{i18n.t('about')}</Text>
       </View>
 
       <View style={AboutStyle.AboutContainer1}>
-        <Text style={AboutStyle.text}>Informazioni sulla versione</Text>
+        <Text style={AboutStyle.text}>{i18n.t('infoVersione')}</Text>
         <View style={AboutStyle.VersionContainer}>
-          <Text style={AboutStyle.text1}>Versione: </Text>
-          <Text style={AboutStyle.text1}>Versione: </Text>
-          <Text style={AboutStyle.text1}>Versione: </Text>
+          <Text style={AboutStyle.text1}>{i18n.t('versione1')}</Text>
+          <Text style={AboutStyle.text1}>{i18n.t('versione2')}</Text>
+          <Text style={AboutStyle.text1}>{i18n.t('versione3')} </Text>
         </View>
       </View>
 

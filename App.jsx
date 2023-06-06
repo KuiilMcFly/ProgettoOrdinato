@@ -16,7 +16,6 @@ import {useTranslation} from 'react-i18next';
 import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
 import Contact from './src/Screens/Contact';
 import i18n from './i18n';
-import StoricoRicariche from './src/Screens/StoricoRicariche';
 import Historical from './src/Screens/Historical';
 
 enableScreens();
@@ -29,13 +28,6 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     setIsMenuVisible(!isMenuVisible);
-  };
-
-  const aggiungiRicarica = () => {
-    const data = new Date().toLocaleString();
-    const energia = Math.floor(Math.random() * 100);
-    const nuovaRicarica = {data, energia};
-    setRicariche([nuovaRicarica, ...ricariche]);
   };
 
   //verifica stato del bluetooth
@@ -53,10 +45,6 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
         style={HomeStyles.container}>
         <View style={HomeStyles.containerHome}>
           <View style={HomeHeaderStyles.group}>
-            <View style={{flex: 1, padding: 20}}>
-              <Button title="Aggiungi ricarica" onPress={aggiungiRicarica} />
-              <StoricoRicariche ricariche={ricariche} />
-            </View>
             {isMenuOpen ? (
               <TouchableOpacity onPress={toggleMenu}>
                 <Image

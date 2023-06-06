@@ -16,6 +16,7 @@ export const AboutStyle = StyleSheet.create({
   },
   text1: {
     color: 'white',
+    textAlign: 'center',
   },
   VersionContainer: {
     backgroundColor: '#3F51B5',

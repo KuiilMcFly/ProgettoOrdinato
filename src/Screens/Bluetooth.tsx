@@ -31,6 +31,7 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
   const [characteristicUUID, setCharacteristicUUID] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+
   LogBox.ignoreLogs(['new NativeEventEmitter']);
 
   const [isDisconnectedModalVisible, setIsDisconnectedModalVisible] =
@@ -388,12 +389,12 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
           colors={['#82c0d1', '#508796', '#d7d8db']}>
           {isMenuOpen ? (
             <TouchableOpacity onPress={toggleMenu}>
-              <View style = {{backgroundColor: '#3F51B5', height: 40}}>
-              <Image
-                source={require('../assets/HomeImg/close.png')}
-                resizeMode="contain"
-                style={HomeHeaderStyles.menuIcon2}
-              />
+              <View style={{backgroundColor: '#3F51B5', height: 40}}>
+                <Image
+                  source={require('../assets/HomeImg/close.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon2}
+                />
               </View>
             </TouchableOpacity>
           ) : (
@@ -421,11 +422,11 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
-            </TouchableOpacity>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>
           </TouchableOpacity>

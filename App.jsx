@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Alert, Button} from 'react-native';
 import {HomeStyles} from './src/Styles/HomeCSS/HomeStyle';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -17,27 +17,34 @@ import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
 import Help from './src/Screens/Help';
 import Contact from './src/Screens/Contact';
 import i18n from './i18n';
+import StoricoRicariche from './src/Screens/StoricoRicariche';
 
 enableScreens();
 
 const Home = ({navigation, bluetoothConnection = false, ...props}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [ricariche, setRicariche] = useState([]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     setIsMenuVisible(!isMenuVisible);
   };
 
-  //verifica stato del bluetooth
-  function checkBluetooth(){
-    if(bluetoothConnection){
-      navigation.navigate('Wifi')
-    }
-    else{
-      Alert.alert(i18n.t("bluetoothConnectionAlert"))
-    }
+  const aggiungiRicarica = () => {
+    const data = new Date().toLocaleString();
+    const energia = Math.floor(Math.random() * 100);
+    const nuovaRicarica = {data, energia};
+    setRicariche([nuovaRicarica, ...ricariche]);
+  };
 
+  //verifica stato del bluetooth
+  function checkBluetooth() {
+    if (bluetoothConnection) {
+      navigation.navigate('Wifi');
+    } else {
+      Alert.alert(i18n.t('bluetoothConnectionAlert'));
+    }
   }
   return (
     <View>
@@ -46,6 +53,10 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
         style={HomeStyles.container}>
         <View style={HomeStyles.containerHome}>
           <View style={HomeHeaderStyles.group}>
+            <View style={{flex: 1, padding: 20}}>
+              <Button title="Aggiungi ricarica" onPress={aggiungiRicarica} />
+              <StoricoRicariche ricariche={ricariche} />
+            </View>
             {isMenuOpen ? (
               <TouchableOpacity onPress={toggleMenu}>
                 <Image
@@ -72,12 +83,12 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
             colors={['#82c0d1', '#508796', '#d7d8db']}>
             {isMenuOpen ? (
               <TouchableOpacity onPress={toggleMenu}>
-                <View style = {{backgroundColor: '#3F51B5', height: 40}}>
-                <Image
-                  source={require('./src/assets/HomeImg/close.png')}
-                  resizeMode="contain"
-                  style={HomeHeaderStyles.menuIcon2}
-                />
+                <View style={{backgroundColor: '#3F51B5', height: 40}}>
+                  <Image
+                    source={require('./src/assets/HomeImg/close.png')}
+                    resizeMode="contain"
+                    style={HomeHeaderStyles.menuIcon2}
+                  />
                 </View>
               </TouchableOpacity>
             ) : (
@@ -88,12 +99,13 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
                   style={HomeHeaderStyles.menuIcon}
                 />
               </TouchableOpacity>
-            )}<View style={{width: '100%', height: '35%', marginLeft: '0%'}}>
-            <Image
-              source={require('./src/assets/ble.png')}
-              style={{width: '100%', height: '100%'}}
-            />
-          </View>
+            )}
+            <View style={{width: '100%', height: '35%', marginLeft: '0%'}}>
+              <Image
+                source={require('./src/assets/ble.png')}
+                style={{width: '100%', height: '100%'}}
+              />
+            </View>
             <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
               <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
             </TouchableOpacity>

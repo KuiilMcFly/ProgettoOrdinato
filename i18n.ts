@@ -21,7 +21,11 @@ const resources = {
       help: 'AIUTO',
       setting: 'IMPOSTAZIONI',
       contact: 'CONTATTACI',
-      about: 'CHI SIAMO'
+      about: 'CHI SIAMO',
+      infoVersione: 'Informazioni sulla versione',
+      versione1 : 'Versione:',
+      versione2 : 'Versione:',
+      versione3 : 'Versione:',
     },
   },
   en: {
@@ -43,7 +47,11 @@ const resources = {
       help: 'HELP',
       setting: 'SETTING',
       contact: 'CONTACT US',
-      about: 'ABOUT US'
+      about: 'ABOUT US',
+      infoVersione: 'Version information',
+      versione1 : 'Version:',
+      versione2 : 'Version:',
+      versione3 : 'Version:',
     },
   },
   fr: {
@@ -65,7 +73,11 @@ const resources = {
       help: 'AIDER',
       setting: 'PARAMÈTRE',
       contact: 'CONTACTEZ-NOUS',
-      about: 'À PROPOS DE NOUS'
+      about: 'À PROPOS DE NOUS',
+      infoVersione: 'Information sur la version',
+      versione1 : 'Version:',
+      versione2 : 'Version:',
+      versione3 : 'Version:',
     },
   },
   de: {
@@ -87,7 +99,11 @@ const resources = {
       help: 'HILFE',
       setting: 'EINSTELLUNG',
       contact: 'KONTAKTIERE UNS',
-      about: 'ÜBER UNS'
+      about: 'ÜBER UNS',
+      infoVersione: 'Versionsinformation',
+      versione1 : 'Ausführung:',
+      versione2 : 'Ausführung:',
+      versione3 : 'Ausführung:',
     },
   },
 };

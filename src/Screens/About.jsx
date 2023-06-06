@@ -1,8 +1,9 @@
 import {React, useState} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, Alert} from 'react-native';
 import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import LinearGradient from 'react-native-linear-gradient';
+import i18n from '../../i18n';
 
 const About = ({navigation, bluetoothConnection = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

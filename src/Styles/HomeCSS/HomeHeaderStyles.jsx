@@ -24,6 +24,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignContent: 'space-around',
     backgroundColor: '#3F51B5',
   },
   home: {
@@ -31,7 +32,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     color: 'rgba(255,255,255,1)',
     height: 16,
     width: '90%',
-    alignItems: 'center',
+    marginBottom: '2%'
   },
   image: {
     width: 27,

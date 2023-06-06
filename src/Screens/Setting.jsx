@@ -128,11 +128,13 @@ function Setting({ navigation, bluetoothConnection = false, ...props }) {
           colors={['#82c0d1', '#508796', '#d7d8db']}
         >
           <TouchableOpacity onPress={toggleMenu}>
+          <View style = {{backgroundColor: '#3F51B5', height: 40}}>
             <Image
               source={require('../assets/HomeImg/close.png')}
               resizeMode="contain"
               style={HomeHeaderStyles.menuIcon2}
             />
+            </View>
           </TouchableOpacity>
           <View style={{ width: '100%', height: '35%', marginLeft: '0%' }}>
             <Image

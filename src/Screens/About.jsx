@@ -64,11 +64,13 @@ const About = ({navigation, bluetoothConnection = false}) => {
           colors={['#82c0d1', '#508796', '#d7d8db']}>
           {isMenuOpen ? (
             <TouchableOpacity onPress={toggleMenu}>
-              <Image
+              <View style = {{backgroundColor: '#3F51B5', height: 40}}>
+                <Image
                 source={require('../assets/HomeImg/close.png')}
                 resizeMode="contain"
                 style={HomeHeaderStyles.menuIcon2}
               />
+              </View>
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={toggleMenu}>

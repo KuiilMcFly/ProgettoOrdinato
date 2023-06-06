@@ -49,7 +49,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     width: 20,
     height: 20,
     marginLeft: '85%',
-    tintColor: '#3F51B5',
+    tintColor: 'white',
     marginTop: 10,
   },
   hamburgerMenu: {
@@ -59,7 +59,7 @@ export const HomeHeaderStyles = StyleSheet.create({
     height: '100%',
     borderRightWidth: 3,
     borderColor: 'white',
-    gap: 10,
+    gap: 2,
   },
   menuItem: {
     fontSize: 16,

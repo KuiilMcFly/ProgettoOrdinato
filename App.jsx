@@ -23,7 +23,6 @@ enableScreens();
 const Home = ({navigation, bluetoothConnection = false, ...props}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [ricariche, setRicariche] = useState([]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

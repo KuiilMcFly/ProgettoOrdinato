@@ -95,8 +95,8 @@ const About = ({navigation, bluetoothConnection = false}) => {
           <TouchableOpacity onPress={() => checkBluetooth()}>
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Historical')}>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('historical')}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>

@@ -14,10 +14,10 @@ import LinearGradient from 'react-native-linear-gradient';
 import About from './src/Screens/About';
 import {useTranslation} from 'react-i18next';
 import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
-import Help from './src/Screens/Help';
 import Contact from './src/Screens/Contact';
 import i18n from './i18n';
 import StoricoRicariche from './src/Screens/StoricoRicariche';
+import Historical from './src/Screens/Historical';
 
 enableScreens();
 
@@ -116,7 +116,7 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('historical')}</Text>
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
@@ -182,7 +182,7 @@ const App = ({navigation}) => {
           <Stack.Screen name="Bluetooth" component={Bluetooth} />
           <Stack.Screen name="Wifi" component={Wifi} />
           <Stack.Screen name="Setting" component={Setting} />
-          <Stack.Screen name="Help" component={Help} />
+          <Stack.Screen name="Historical" component={Historical} />
           <Stack.Screen name="ContactUs" component={Contact} />
           <Stack.Screen name="AboutUs" component={About} />
         </Stack.Navigator>

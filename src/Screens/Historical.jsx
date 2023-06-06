@@ -1,17 +1,26 @@
 import {React, useState} from 'react';
-import {View, Text, TouchableOpacity, Image, Alert} from 'react-native';
+import {View, Text, TouchableOpacity, Image, Alert, Button} from 'react-native';
 import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import LinearGradient from 'react-native-linear-gradient';
 import i18n from '../../i18n';
+import StoricoRicariche from './StoricoRicariche';
 
-const Help = ({navigation, bluetoothConnection = false}) => {
+const Historical = ({navigation, bluetoothConnection = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [ricariche, setRicariche] = useState([]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     setIsMenuVisible(!isMenuVisible);
+  };
+
+  const aggiungiRicarica = () => {
+    const data = new Date().toLocaleString();
+    const energia = Math.floor(Math.random() * 100);
+    const nuovaRicarica = {data, energia};
+    setRicariche([nuovaRicarica, ...ricariche]);
   };
 
    //verifica stato del bluetooth
@@ -46,8 +55,13 @@ const Help = ({navigation, bluetoothConnection = false}) => {
             />
           </TouchableOpacity>
         )}
-        <Text style={HomeHeaderStyles.home}>{i18n.t('help')}</Text>
+        <Text style={HomeHeaderStyles.home}>{i18n.t('historical')}</Text>
       </View>
+
+      <View style={{flex: 1, padding: 20}}>
+              <Button title="Aggiungi ricarica" onPress={aggiungiRicarica} />
+              <StoricoRicariche ricariche={ricariche} />
+            </View>
 
       {isMenuVisible && (
         <LinearGradient
@@ -102,4 +116,4 @@ const Help = ({navigation, bluetoothConnection = false}) => {
   );
 };
 
-export default Help;
+export default Historical;

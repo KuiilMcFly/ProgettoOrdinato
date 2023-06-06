@@ -91,7 +91,7 @@ const Contact = ({navigation, bluetoothConnection = false}) => {
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('historical')}</Text>
             </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>

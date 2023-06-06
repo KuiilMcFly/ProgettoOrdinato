@@ -422,7 +422,7 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('historical')}</Text>
           </TouchableOpacity>
           <TouchableOpacity>
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>

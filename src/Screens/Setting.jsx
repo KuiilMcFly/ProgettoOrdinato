@@ -156,7 +156,7 @@ function Setting({navigation, bluetoothConnection = false, ...props}) {
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('historical')}</Text>
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>

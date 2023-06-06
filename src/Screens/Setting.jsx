@@ -155,7 +155,7 @@ function Setting({navigation, bluetoothConnection = false, ...props}) {
           <TouchableOpacity onPress={() => checkBluetooth()}>
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Historical')}>
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('historical')}</Text>
             </TouchableOpacity>
             <TouchableOpacity>

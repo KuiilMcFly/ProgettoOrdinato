@@ -7,9 +7,11 @@ import i18n from '../../i18n';
 
 const About = ({navigation, bluetoothConnection = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsMenuVisible(!isMenuVisible);
   };
 
    //verifica stato del bluetooth
@@ -20,8 +22,8 @@ const About = ({navigation, bluetoothConnection = false}) => {
     else{
       Alert.alert(i18n.t("bluetoothConnectionAlert"))
     }
-
   }
+
   return (
     <LinearGradient
       colors={['#82c0d1', '#508796', '#d7d8db']}
@@ -56,7 +58,7 @@ const About = ({navigation, bluetoothConnection = false}) => {
         </View>
       </View>
 
-      {isMenuOpen && (
+      {isMenuVisible && (
         <LinearGradient
           style={HomeHeaderStyles.hamburgerMenu}
           colors={['#82c0d1', '#508796', '#d7d8db']}>

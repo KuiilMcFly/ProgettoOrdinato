@@ -17,7 +17,11 @@ const resources = {
       lingua: 'Lingua',
       linguaCambiata: 'Lingua cambiata!',
       impostazioni: 'IMPOSTAZIONI',
-      bluetoothConnectionAlert: 'Questa sezione è accessibile solo dopo che sei connesso ad un device'
+      bluetoothConnectionAlert: 'Questa sezione è accessibile solo dopo che sei connesso ad un device',
+      help: 'AIUTO',
+      setting: 'IMPOSTAZIONI',
+      contact: 'CONTATTACI',
+      about: 'CHI SIAMO'
     },
   },
   en: {
@@ -35,7 +39,11 @@ const resources = {
       lingua: 'Language',
       linguaCambiata: 'Language changed!',
       impostazioni: 'SETTING',
-      bluetoothConnectionAlert: 'This section is accessible only after you are connected to a device'
+      bluetoothConnectionAlert: 'This section is accessible only after you are connected to a device',
+      help: 'HELP',
+      setting: 'SETTING',
+      contact: 'CONTACT US',
+      about: 'ABOUT US'
     },
   },
   fr: {
@@ -53,7 +61,11 @@ const resources = {
       lingua: 'Langue',
       linguaCambiata: 'La langue a changé!',
       impostazioni: 'PARAMÈTRE',
-      bluetoothConnectionAlert: "Cette section n'est accessible qu'après vous être connecté à un appareil"
+      bluetoothConnectionAlert: "Cette section n'est accessible qu'après vous être connecté à un appareil",
+      help: 'AIDER',
+      setting: 'PARAMÈTRE',
+      contact: 'CONTACTEZ-NOUS',
+      about: 'À PROPOS DE NOUS'
     },
   },
   de: {
@@ -71,7 +83,11 @@ const resources = {
       lingua: 'Zunge',
       linguaCambiata: 'Sprache geändert!',
       impostazioni: 'EINSTELLUNG',
-      bluetoothConnectionAlert: 'Auf diesen Abschnitt kann erst zugegriffen werden, nachdem Sie mit einem Gerät verbunden sind'
+      bluetoothConnectionAlert: 'Auf diesen Abschnitt kann erst zugegriffen werden, nachdem Sie mit einem Gerät verbunden sind',
+      help: 'HILFE',
+      setting: 'EINSTELLUNG',
+      contact: 'KONTAKTIERE UNS',
+      about: 'ÜBER UNS'
     },
   },
 };

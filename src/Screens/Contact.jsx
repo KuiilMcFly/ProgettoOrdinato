@@ -88,13 +88,13 @@ const Contact = ({navigation, bluetoothConnection = false}) => {
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
-            <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-              <Text style={HomeHeaderStyles.menuItem}>HELP</Text>
+              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
             </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
-              <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
+              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>
             </TouchableOpacity>
         </LinearGradient>
       )}

@@ -51,9 +51,9 @@ const About = ({navigation, bluetoothConnection = false}) => {
       <View style={AboutStyle.AboutContainer1}>
         <Text style={AboutStyle.text}>{i18n.t('infoVersione')}</Text>
         <View style={AboutStyle.VersionContainer}>
-          <Text style={AboutStyle.text1}>{i18n.t('versione1')}</Text>
-          <Text style={AboutStyle.text1}>{i18n.t('versione2')}</Text>
-          <Text style={AboutStyle.text1}>{i18n.t('versione3')} </Text>
+          <Text style={AboutStyle.text1}>{i18n.t('versione1')} v1.2.3</Text>
+          <Text style={AboutStyle.text1}>{i18n.t('versione2')} v1.2.3</Text>
+          <Text style={AboutStyle.text1}>{i18n.t('versione3')} v1.2.3</Text>
         </View>
       </View>
 

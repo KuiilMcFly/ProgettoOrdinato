@@ -14,13 +14,12 @@ const About = ({navigation, bluetoothConnection = false}) => {
     setIsMenuVisible(!isMenuVisible);
   };
 
-   //verifica stato del bluetooth
-   function checkBluetooth(){
-    if(bluetoothConnection){
-      navigation.navigate('Wifi')
-    }
-    else{
-      Alert.alert(i18n.t("bluetoothConnectionAlert"))
+  //verifica stato del bluetooth
+  function checkBluetooth() {
+    if (bluetoothConnection) {
+      navigation.navigate('Wifi');
+    } else {
+      Alert.alert(i18n.t('bluetoothConnectionAlert'));
     }
   }
 
@@ -64,12 +63,12 @@ const About = ({navigation, bluetoothConnection = false}) => {
           colors={['#82c0d1', '#508796', '#d7d8db']}>
           {isMenuOpen ? (
             <TouchableOpacity onPress={toggleMenu}>
-              <View style = {{backgroundColor: '#3F51B5', height: 40}}>
+              <View style={{backgroundColor: '#3F51B5', height: 40}}>
                 <Image
-                source={require('../assets/HomeImg/close.png')}
-                resizeMode="contain"
-                style={HomeHeaderStyles.menuIcon2}
-              />
+                  source={require('../assets/HomeImg/close.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon2}
+                />
               </View>
             </TouchableOpacity>
           ) : (
@@ -96,15 +95,15 @@ const About = ({navigation, bluetoothConnection = false}) => {
           <TouchableOpacity onPress={() => checkBluetooth()}>
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
-          <TouchableOpacity >
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
-            </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('help')}</Text>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity >
-              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
-            </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
+          </TouchableOpacity>
         </LinearGradient>
       )}
     </LinearGradient>

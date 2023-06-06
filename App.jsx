@@ -14,6 +14,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import About from './src/Screens/About';
 import {useTranslation} from 'react-i18next';
 import {HomeHeaderStyles} from './src/Styles/HomeCSS/HomeHeaderStyles';
+import Help from './src/Screens/Help';
 import i18n from './i18n';
 
 enableScreens();
@@ -101,6 +102,9 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
             <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
               <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Help')}>
+              <Text style={HomeHeaderStyles.menuItem}>HELP</Text>
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
               <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
             </TouchableOpacity>
@@ -162,6 +166,7 @@ const App = ({navigation}) => {
           <Stack.Screen name="Bluetooth" component={Bluetooth} />
           <Stack.Screen name="Wifi" component={Wifi} />
           <Stack.Screen name="Setting" component={Setting} />
+          <Stack.Screen name="Help" component={Help} />
           <Stack.Screen name="AboutUs" component={About} />
         </Stack.Navigator>
       )}

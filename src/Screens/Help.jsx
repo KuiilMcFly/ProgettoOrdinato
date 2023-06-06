@@ -5,7 +5,7 @@ import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import LinearGradient from 'react-native-linear-gradient';
 import i18n from '../../i18n';
 
-const About = ({navigation, bluetoothConnection = false}) => {
+const Help = ({navigation, bluetoothConnection = false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -46,16 +46,7 @@ const About = ({navigation, bluetoothConnection = false}) => {
             />
           </TouchableOpacity>
         )}
-        <Text style={HomeHeaderStyles.home}>ABOUT US</Text>
-      </View>
-
-      <View style={AboutStyle.AboutContainer1}>
-        <Text style={AboutStyle.text}>Informazioni sulla versione</Text>
-        <View style={AboutStyle.VersionContainer}>
-          <Text style={AboutStyle.text1}>Versione: </Text>
-          <Text style={AboutStyle.text1}>Versione: </Text>
-          <Text style={AboutStyle.text1}>Versione: </Text>
-        </View>
+        <Text style={HomeHeaderStyles.home}>HELP</Text>
       </View>
 
       {isMenuVisible && (
@@ -96,16 +87,16 @@ const About = ({navigation, bluetoothConnection = false}) => {
           <TouchableOpacity onPress={() => checkBluetooth()}>
             <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Help')}>
-              <Text style={HomeHeaderStyles.menuItem}>HELP</Text>
-            </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
             <Text style={HomeHeaderStyles.menuItem}>SETTING</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
+              <Text style={HomeHeaderStyles.menuItem}>ABOUT US</Text>
+            </TouchableOpacity>
         </LinearGradient>
       )}
     </LinearGradient>
   );
 };
 
-export default About;
+export default Help;

@@ -15,6 +15,7 @@ function Setting({ navigation, bluetoothConnection = false, ...props }) {
   useEffect(() => {
     const unsubscribe = navigation.addListener('blur', () => {
       setIsMenuVisible(false);
+      setIsMenuOpen(false); // Aggiungi questa riga per chiudere il menu quando la pagina viene sfocata
     });
 
     return unsubscribe;

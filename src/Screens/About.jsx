@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {View, Text, TouchableOpacity, Image, Alert} from 'react-native';
+import {View, Text, TouchableOpacity, Image, Alert, StyleSheet} from 'react-native';
 import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import LinearGradient from 'react-native-linear-gradient';
@@ -58,6 +58,7 @@ const About = ({navigation, bluetoothConnection = false}) => {
       </View>
 
       {isMenuVisible && (
+        <View style={styles.overlay}>
         <LinearGradient
           style={HomeHeaderStyles.hamburgerMenu}
           colors={['#82c0d1', '#508796', '#d7d8db']}>
@@ -105,9 +106,17 @@ const About = ({navigation, bluetoothConnection = false}) => {
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
           </TouchableOpacity>
         </LinearGradient>
+        </View>
       )}
     </LinearGradient>
   );
 };
+
+const styles = StyleSheet.create({
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Imposta l'opacità qui
+  },
+});
 
 export default About;

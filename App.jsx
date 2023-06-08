@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, Alert, Button} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Alert, StyleSheet} from 'react-native';
 import {HomeStyles} from './src/Styles/HomeCSS/HomeStyle';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -65,6 +65,7 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
           </View>
         </View>
         {isMenuOpen && (
+          <View style={styles.overlay}>
           <LinearGradient
             style={HomeHeaderStyles.hamburgerMenu}
             colors={['#82c0d1', '#508796', '#d7d8db']}>
@@ -112,11 +113,19 @@ const Home = ({navigation, bluetoothConnection = false, ...props}) => {
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>
             </TouchableOpacity>
           </LinearGradient>
+          </View>
         )}
       </LinearGradient>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Imposta l'opacità qui
+  },
+});
 
 const Stack = createNativeStackNavigator();
 

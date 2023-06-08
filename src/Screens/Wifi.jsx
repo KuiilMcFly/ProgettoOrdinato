@@ -9,6 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  StyleSheet
 } from 'react-native';
 import {WifiScanStyle} from '../Styles/WifiCSS/WifiScanCSS';
 import {WifiStyles} from '../Styles/WifiCSS/WifiStyles';
@@ -207,6 +208,7 @@ function Wifi(props) {
         </View>
 
         {isMenuOpen && (
+          <View style={styles.overlay}>
           <LinearGradient
             style={HomeHeaderStyles.hamburgerMenu}
             colors={['#82c0d1', '#508796', '#d7d8db']}>
@@ -254,9 +256,17 @@ function Wifi(props) {
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>
             </TouchableOpacity>
           </LinearGradient>
+          </View>
         )}
       </LinearGradient>
   );
 }
+
+const styles = StyleSheet.create({
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Imposta l'opacità qui
+  },
+});
 
 export default Wifi;

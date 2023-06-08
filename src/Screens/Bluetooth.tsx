@@ -9,6 +9,7 @@ import {
   Button,
   Modal,
   Alert,
+  StyleSheet
 } from 'react-native';
 import {BluetoothCSS} from '../Styles/BluetoothCSS/BluetoothCSS';
 import ModalStyles from '../Styles/BluetoothCSS/BluetoothModal1';
@@ -384,6 +385,7 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
       </View>
 
       {isMenuOpen && (
+        <View style={styles.overlay}>
         <LinearGradient
           style={HomeHeaderStyles.hamburgerMenu}
           colors={['#82c0d1', '#508796', '#d7d8db']}>
@@ -431,9 +433,17 @@ function Bluetooth({navigation, bluetoothConnection = false, ...props}) {
             <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>
           </TouchableOpacity>
         </LinearGradient>
+        </View>
       )}
     </LinearGradient>
   );
 }
+
+const styles = StyleSheet.create({
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Imposta l'opacità qui
+  },
+});
 
 export default Bluetooth;

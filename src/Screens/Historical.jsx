@@ -1,5 +1,13 @@
 import {React, useState} from 'react';
-import {View, Text, TouchableOpacity, Image, Alert, Button} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Alert,
+  Button,
+  StyleSheet,
+} from 'react-native';
 import {AboutStyle} from '../Styles/AboutCSS/AboutCSS';
 import {HomeHeaderStyles} from '../Styles/HomeCSS/HomeHeaderStyles';
 import LinearGradient from 'react-native-linear-gradient';
@@ -23,13 +31,12 @@ const Historical = ({navigation, bluetoothConnection = false}) => {
     setRicariche([nuovaRicarica, ...ricariche]);
   };
 
-   //verifica stato del bluetooth
-   function checkBluetooth(){
-    if(bluetoothConnection){
-      navigation.navigate('Wifi')
-    }
-    else{
-      Alert.alert(i18n.t("bluetoothConnectionAlert"))
+  //verifica stato del bluetooth
+  function checkBluetooth() {
+    if (bluetoothConnection) {
+      navigation.navigate('Wifi');
+    } else {
+      Alert.alert(i18n.t('bluetoothConnectionAlert'));
     }
   }
 
@@ -59,61 +66,70 @@ const Historical = ({navigation, bluetoothConnection = false}) => {
       </View>
 
       <View style={{flex: 1, padding: 20}}>
-              <Button title="Aggiungi ricarica" onPress={aggiungiRicarica} />
-              <StoricoRicariche ricariche={ricariche} />
-            </View>
+        <Button title="Aggiungi ricarica" onPress={aggiungiRicarica} />
+        <StoricoRicariche ricariche={ricariche} />
+      </View>
 
       {isMenuVisible && (
-        <LinearGradient
-          style={HomeHeaderStyles.hamburgerMenu}
-          colors={['#82c0d1', '#508796', '#d7d8db']}>
-          {isMenuOpen ? (
-            <TouchableOpacity onPress={toggleMenu}>
-              <View style = {{backgroundColor: '#3F51B5', height: 40}}>
+        <View style={styles.overlay}>
+          <LinearGradient
+            style={HomeHeaderStyles.hamburgerMenu}
+            colors={['#82c0d1', '#508796', '#d7d8db']}>
+            {isMenuOpen ? (
+              <TouchableOpacity onPress={toggleMenu}>
+                <View style={{backgroundColor: '#3F51B5', height: 40}}>
+                  <Image
+                    source={require('../assets/HomeImg/close.png')}
+                    resizeMode="contain"
+                    style={HomeHeaderStyles.menuIcon2}
+                  />
+                </View>
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={toggleMenu}>
                 <Image
-                source={require('../assets/HomeImg/close.png')}
-                resizeMode="contain"
-                style={HomeHeaderStyles.menuIcon2}
-              />
-              </View>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity onPress={toggleMenu}>
+                  source={require('../assets/HomeImg/menu.png')}
+                  resizeMode="contain"
+                  style={HomeHeaderStyles.menuIcon}
+                />
+              </TouchableOpacity>
+            )}
+            <View style={{width: '100%', height: '35%', marginLeft: '0%'}}>
               <Image
-                source={require('../assets/HomeImg/menu.png')}
-                resizeMode="contain"
-                style={HomeHeaderStyles.menuIcon}
+                source={require('../assets/ble.png')}
+                style={{width: '100%', height: '100%'}}
               />
+            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+              <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
             </TouchableOpacity>
-          )}
-          <View style={{width: '100%', height: '35%', marginLeft: '0%'}}>
-            <Image
-              source={require('../assets/ble.png')}
-              style={{width: '100%', height: '100%'}}
-            />
-          </View>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-            <Text style={HomeHeaderStyles.menuItem}>HOME</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
-            <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => checkBluetooth()}>
-            <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
-            <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Bluetooth')}>
+              <Text style={HomeHeaderStyles.menuItem}>BLUETOOTH</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => checkBluetooth()}>
+              <Text style={HomeHeaderStyles.menuItem}>WIFI</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
+              <Text style={HomeHeaderStyles.menuItem}>{i18n.t('setting')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('contact')}</Text>
             </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
+            <TouchableOpacity onPress={() => navigation.navigate('AboutUs')}>
               <Text style={HomeHeaderStyles.menuItem}>{i18n.t('about')}</Text>
             </TouchableOpacity>
-        </LinearGradient>
+          </LinearGradient>
+        </View>
       )}
     </LinearGradient>
   );
 };
+
+const styles = StyleSheet.create({
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Imposta l'opacità qui
+  },
+});
 
 export default Historical;
